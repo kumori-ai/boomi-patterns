@@ -7,7 +7,7 @@
       "showPagesAsReadOnly": false,
       "users": null,
       "groups": null,
-      "id": "1ef5ebed-5d00-468d-9f4f-f74bb9b419a1",
+      "id": "e001ad74-9d2e-4fcb-afc3-c430f36abf3e",
       "versionId": "00000000-0000-0000-0000-000000000000",
       "parentId": "00000000-0000-0000-0000-000000000000",
       "parentVersionId": "00000000-0000-0000-0000-000000000000"
@@ -55,9 +55,9 @@
       },
       "57eddcd2-4458-40d8-a143-547d43749396": {
         "guid": "57eddcd2-4458-40d8-a143-547d43749396",
-        "versionId": "9a0c0717-eb0f-4749-9196-408174e4515e",
+        "versionId": "8bfffba6-2087-4ac8-ae6b-76c4e6f9db94",
         "elementType": "input",
-        "developerName": "Kumori BDI Monitor",
+        "developerName": "What you're looking at",
         "contentType": null,
         "isVersionless": false
       },
@@ -99,9 +99,9 @@
       },
       "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2": {
         "guid": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
-        "versionId": "95fadf24-288e-47f1-81d9-c0739c4be781",
+        "versionId": "6d59ee5a-b476-47ad-ba3f-ff1a53ccc358",
         "elementType": "PAGE_LAYOUT",
-        "developerName": "Kumori BDI Monitor page",
+        "developerName": "Intro page",
         "contentType": null,
         "isVersionless": false
       }
@@ -189,7 +189,7 @@
     "translationNotes": null,
     "compositeId": {
       "guid": "0438716c-4fa5-447c-9779-4a93924aa80b",
-      "versionId": "4b346f9c-c339-47b0-b603-62bcb00d74c8",
+      "versionId": "d52f8281-3927-41c3-9d0a-064747fd2db7",
       "elementType": null,
       "developerName": "Kumori BDI Monitor",
       "contentType": null,
@@ -197,8 +197,8 @@
     },
     "developerName": "Kumori BDI Monitor",
     "developerSummary": "Kumori x Boomi: BDI data flow status via Boomi Integration (built via API, 2026-10-05)",
-    "dateCreated": "2026-10-05T19:02:16.6441134+00:00",
-    "dateModified": "2026-10-05T19:02:16.6441147+00:00",
+    "dateCreated": "2026-10-05T19:24:17.5204348+00:00",
+    "dateModified": "2026-10-05T19:24:17.5204349+00:00",
     "userCreated": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
     "userModified": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
     "userOwner": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
@@ -420,7 +420,7 @@
     },
     {
       "elementId": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
-      "elementVersionId": "95fadf24-288e-47f1-81d9-c0739c4be781",
+      "elementVersionId": "6d59ee5a-b476-47ad-ba3f-ff1a53ccc358",
       "elementType": "PAGE_LAYOUT",
       "contentValueDocumentTranslations": {
         "08ce8291-657f-4be0-a4f5-c8453a68457e": {
@@ -436,8 +436,8 @@
           "contentValuesState": null
         }
       },
-      "dateCreated": "2026-10-05T19:00:41.3968544+00:00",
-      "dateModified": "2026-10-05T19:00:41.3968536+00:00",
+      "dateCreated": "2026-10-05T19:24:16.4378988+00:00",
+      "dateModified": "2026-10-05T19:24:16.4378974+00:00",
       "userCreated": "00000000-0000-0000-0000-000000000000",
       "userModified": "00000000-0000-0000-0000-000000000000",
       "userOwner": "00000000-0000-0000-0000-000000000000"
@@ -514,7 +514,7 @@
     },
     {
       "elementId": "57eddcd2-4458-40d8-a143-547d43749396",
-      "elementVersionId": "9a0c0717-eb0f-4749-9196-408174e4515e",
+      "elementVersionId": "8bfffba6-2087-4ac8-ae6b-76c4e6f9db94",
       "elementType": "input",
       "contentValueDocumentTranslations": {
         "08ce8291-657f-4be0-a4f5-c8453a68457e": {
@@ -523,14 +523,14 @@
             "78834aff-d440-4852-b70d-1f1c98d13da6": "Ask BDI for its pipelines",
             "9510ccdb-f815-47f6-a7e8-ec0bd23a2d51": "",
             "e2d1b0e4-c79a-45e3-9400-97544ddda4c0": "",
-            "f42b4882-d4a5-4c7b-b93c-926cd893002c": "Kumori BDI Monitor",
+            "f42b4882-d4a5-4c7b-b93c-926cd893002c": "What you're looking at",
             "fcc678ee-3b1e-4d76-b9cd-6973a6a7ad8e": ""
           },
           "contentValuesState": null
         }
       },
-      "dateCreated": "2026-10-05T18:59:11.0093291+00:00",
-      "dateModified": "2026-10-05T18:59:11.0093275+00:00",
+      "dateCreated": "2026-10-05T19:24:14.3046143+00:00",
+      "dateModified": "2026-10-05T19:24:14.3046119+00:00",
       "userCreated": "00000000-0000-0000-0000-000000000000",
       "userModified": "00000000-0000-0000-0000-000000000000",
       "userOwner": "00000000-0000-0000-0000-000000000000"
@@ -1043,16 +1043,16 @@
       "agent": null,
       "compositeId": {
         "guid": "57eddcd2-4458-40d8-a143-547d43749396",
-        "versionId": "9a0c0717-eb0f-4749-9196-408174e4515e",
+        "versionId": "8bfffba6-2087-4ac8-ae6b-76c4e6f9db94",
         "elementType": "input",
-        "developerName": "Kumori BDI Monitor",
+        "developerName": "What you're looking at",
         "contentType": null,
         "isVersionless": false
       },
-      "developerName": "Kumori BDI Monitor",
+      "developerName": "What you're looking at",
       "developerSummary": null,
       "dateCreated": "2026-10-05T17:26:27.84585+00:00",
-      "dateModified": "2026-10-05T19:01:29.689117+00:00",
+      "dateModified": "2026-10-05T19:24:17.486621+00:00",
       "userCreated": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userModified": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userOwner": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
@@ -2456,16 +2456,16 @@
       "modernPageLayout": false,
       "compositeId": {
         "guid": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
-        "versionId": "95fadf24-288e-47f1-81d9-c0739c4be781",
+        "versionId": "6d59ee5a-b476-47ad-ba3f-ff1a53ccc358",
         "elementType": "PAGE_LAYOUT",
-        "developerName": "Kumori BDI Monitor page",
+        "developerName": "Intro page",
         "contentType": null,
         "isVersionless": false
       },
-      "developerName": "Kumori BDI Monitor page",
+      "developerName": "Intro page",
       "developerSummary": "Welcome + BDI flows list (placeholder until Integration ListFlows is bound)",
       "dateCreated": "2026-10-05T17:25:24.982665+00:00",
-      "dateModified": "2026-10-05T19:01:29.701812+00:00",
+      "dateModified": "2026-10-05T19:24:17.495827+00:00",
       "userCreated": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userModified": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userOwner": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",

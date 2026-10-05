@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bns:Component xmlns:bns="http://api.platform.boomi.com/"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               name="GET BDI Rivers List"
+               name="BDI Rivers API: List Pipelines"
                type="connector-action"
                subType="officialboomi-X3979C-rest-prod"
                folderId="Rjo4ODgyMTUz" componentId="929fa97f-b659-4bd4-a7a4-97f2b30f7ddf">

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bns:Component xmlns:bns="http://api.platform.boomi.com/"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               name="WSS ListFlows Listener"
+               name="[LISTENER] BDI List Pipelines"
                type="process"
                folderId="Rjo4ODgyMTUz" componentId="546dda8c-9769-4e78-af41-20914757ae7a">
   <bns:encryptedValues/>
-  <bns:description>Web Services Server listener for GET /ws/simple/getListFlows. Thin wrapper: WSS start, call [SUB] BDI List Flows, return its documents to the caller (kumori.ai/api/boomi/flows, Flow's OpenAPI connector). | built with boomi-companion v1.0.76</bns:description>
+  <bns:description>Web Services Server listener for GET /ws/simple/getListFlows. Thin wrapper: WSS start, call [SUB] BDI List Pipelines, return its documents to the caller (kumori.ai/api/boomi/flows, Flow's OpenAPI connector). | built with boomi-companion v1.0.76</bns:description>
   <bns:object>
     <process allowSimultaneous="true" enableUserLog="false" processLogOnErrorOnly="false" purgeDataImmediately="false" stopProcessingIfZeroDocuments="true" updateRunDates="false" workload="general">
       <shapes>

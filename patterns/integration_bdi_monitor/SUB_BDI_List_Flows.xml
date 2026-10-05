@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bns:Component xmlns:bns="http://api.platform.boomi.com/"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               name="[SUB] BDI List Flows"
+               name="[SUB] BDI List Pipelines"
                type="process"
                folderId="Rjo4ODgyMTUz" componentId="de114049-b658-4059-a1e2-96d0be64ae5b">
   <bns:encryptedValues/>
-  <bns:description>Business logic for the Flow action ListFlows: calls the BDI Rivers API and returns the raw list. Testable standalone (passthrough start behaves as No Data). Bearer token comes from DPP_BDI_AUTH via Environment Extensions. | built with boomi-companion v1.0.76</bns:description>
+  <bns:description>Calls the Boomi Data Integration Rivers API and returns the list of BDI pipelines (BDI calls them data flows; its API says rivers). Testable standalone (passthrough start behaves as No Data). Bearer token comes from DPP_BDI_AUTH via Environment Extensions. | built with boomi-companion v1.0.76</bns:description>
   <bns:object>
     <process allowSimultaneous="false" enableUserLog="false" processLogOnErrorOnly="false" purgeDataImmediately="false" stopProcessingIfZeroDocuments="true" updateRunDates="false" workload="general">
       <shapes>

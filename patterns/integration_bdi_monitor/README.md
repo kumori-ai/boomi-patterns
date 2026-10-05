@@ -1,6 +1,6 @@
 # Integration -> BDI monitor (Boomi Integration calling the BDI Rivers API, served as a listener)
 
-A Boomi Integration process reads Boomi Data Integration's flows (rivers) through the BDI Rivers API and serves them
+A Boomi Integration process reads Boomi Data Integration's pipelines (BDI calls them data flows; its API says rivers) through the BDI Rivers API and serves them
 as an authenticated Web Services Server listener, `GET /ws/simple/getListFlows`. Two clients use it: Boomi Flow,
 through its OpenAPI connector (`../flow_bdi_monitor`), and kumori.ai's "Run it live" button.
 
@@ -18,9 +18,9 @@ replace each referenced id with the one your account returns, as `active-develop
 | `j.BDI.ListRivers.RESP.xml` | JSON profile of the Rivers API list response |
 | `BDI_API_Connection.xml` | REST connection to api.rivery.io |
 | `BDI_GET_Rivers_List.xml` | REST GET operation for the rivers list |
-| `SUB_BDI_List_Flows.xml` | Subprocess: GET the rivers, return the documents (testable on its own) |
-| `WSS_ListFlows.xml` | Web Services Server operation: GET, objectName `ListFlows`, JSON out |
-| `WSS_ListFlows_Wrapper.xml` | Listener process: WSS start -> call the subprocess -> return documents |
+| `SUB_BDI_List_Flows.xml` | "[SUB] BDI List Pipelines": GET the pipelines, return the documents (testable on its own) |
+| `WSS_ListFlows.xml` | "[WSS] BDI List Pipelines": GET, objectName `ListFlows` (kept: it is the URL path callers use), JSON out |
+| `WSS_ListFlows_Wrapper.xml` | "[LISTENER] BDI List Pipelines": WSS start -> call the subprocess -> return documents |
 | `wss_list_flows.openapi.yaml` | OpenAPI 3.0 description of the listener, for Flow's OpenAPI connector |
 
 ## Live instance (as of 2026-10-05)
@@ -32,10 +32,10 @@ behind Caddy and Cloudflare at https://boomi.kumori.ai).
 | Folder "Kumori BDI Monitor" | Rjo4ODgyMTUz | |
 | Profile j.BDI.ListRivers.RESP | 563233ff-96b8-44b5-abe4-b6a4412f4852 | |
 | REST connection "BDI API (api.rivery.io)" | 9b86387e-6477-4380-82e2-030c1f8b556c | |
-| REST op "GET BDI Rivers List" | 929fa97f-b659-4bd4-a7a4-97f2b30f7ddf | |
-| Process [SUB] BDI List Flows | de114049-b658-4059-a1e2-96d0be64ae5b | deployed; test COMPLETE, 3 rivers |
-| WSS op "WSS ListFlows" | d3ddcf81-b830-4226-98c9-b01485f00b74 | |
-| Process "WSS ListFlows Listener" | 546dda8c-9769-4e78-af41-20914757ae7a | deployed, package 77f86b48-c597-4073-a161-8e7b097d1f20 |
+| REST op "BDI Rivers API: List Pipelines" | 929fa97f-b659-4bd4-a7a4-97f2b30f7ddf | |
+| Process "[SUB] BDI List Pipelines" | de114049-b658-4059-a1e2-96d0be64ae5b | deployed, package 93b25e7f-149d-4202-a398-f0b11b1baeb3 |
+| WSS op "[WSS] BDI List Pipelines" | d3ddcf81-b830-4226-98c9-b01485f00b74 | |
+| Process "[LISTENER] BDI List Pipelines" | 546dda8c-9769-4e78-af41-20914757ae7a | deployed, package 59d5a77b-c0ee-4273-bf03-2f383ff82bc1 |
 
 Check: `python3 checks/check_bdi_bridge.py` (as of 2026-10-05: PASS, 3 rivers, 872 ms through the listener).
 
