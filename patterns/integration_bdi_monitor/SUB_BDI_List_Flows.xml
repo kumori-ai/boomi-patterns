@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bns:Component xmlns:bns="http://api.platform.boomi.com/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               name="[SUB] BDI List Flows"
+               type="process"
+               folderId="Rjo4ODgyMTUz" componentId="de114049-b658-4059-a1e2-96d0be64ae5b">
+  <bns:encryptedValues/>
+  <bns:description>Business logic for the Flow action ListFlows: calls the BDI Rivers API and returns the raw list. Testable standalone (passthrough start behaves as No Data). Bearer token comes from DPP_BDI_AUTH via Environment Extensions. | built with boomi-companion v1.0.76</bns:description>
+  <bns:object>
+    <process allowSimultaneous="false" enableUserLog="false" processLogOnErrorOnly="false" purgeDataImmediately="false" stopProcessingIfZeroDocuments="true" updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start" userlabel="" x="48.0" y="46.0">
+          <configuration>
+            <passthroughaction/>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2" x="257.0" y="56.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="message_icon" name="shape2" shapetype="message" userlabel="Clear the document before the GET" x="273.0" y="48.0">
+          <configuration>
+            <message combined="false">
+              <msgTxt></msgTxt>
+              <msgParameters/>
+            </message>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape2.dragpoint1" toShape="shape3" x="482.0" y="56.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="connectoraction_icon" name="shape3" shapetype="connectoraction" userlabel="GET BDI rivers" x="498.0" y="48.0">
+          <configuration>
+            <connectoraction actionType="GET" allowDynamicCredentials="NONE" connectionId="9b86387e-6477-4380-82e2-030c1f8b556c" connectorType="officialboomi-X3979C-rest-prod" hideSettings="false" operationId="929fa97f-b659-4bd4-a7a4-97f2b30f7ddf">
+              <parameters/>
+              <dynamicProperties>
+                <propertyvalue childKey="Authorization" key="requestHeaders" name="Request Headers" valueType="process">
+                  <processparameter processproperty="DPP_BDI_AUTH" processpropertydefaultvalue=""/>
+                </propertyvalue>
+              </dynamicProperties>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape3.dragpoint1" toShape="shape4" x="707.0" y="56.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="notify_icon" name="shape4" shapetype="notify" userlabel="Log the BDI response" x="723.0" y="48.0">
+          <configuration>
+            <notify disableEvent="true" enableUserLog="false" perExecution="false" title="">
+              <notifyMessage>[BDI RIVERS] {1}</notifyMessage>
+              <notifyMessageLevel>INFO</notifyMessageLevel>
+              <notifyParameters>
+                <parametervalue key="0" valueType="current"/>
+              </notifyParameters>
+            </notify>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape4.dragpoint1" toShape="shape5" x="932.0" y="56.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape5" shapetype="returndocuments" userlabel="Rivers" x="948.0" y="48.0">
+          <configuration>
+            <returndocuments label="Rivers"/>
+          </configuration>
+          <dragpoints/>
+        </shape>
+      </shapes>
+    </process>
+  </bns:object>
+  <bns:processOverrides>
+    <Overrides xmlns="">
+      <Properties>
+        <PropertyOverride name="DPP_BDI_AUTH"/>
+      </Properties>
+    </Overrides>
+  </bns:processOverrides>
+</bns:Component>

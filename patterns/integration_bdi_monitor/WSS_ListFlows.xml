@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bns:Component xmlns:bns="http://api.platform.boomi.com/"
+           type="connector-action"
+           subType="wss"
+           name="WSS ListFlows"
+           folderId="Rjo4ODgyMTUz" componentId="d3ddcf81-b830-4226-98c9-b01485f00b74">
+  <bns:encryptedValues/>
+  <bns:description>Web Services Server GET /ws/simple/getListFlows: returns the BDI rivers list as JSON. Basic auth is enforced by the runtime's shared web server. | built with boomi-companion v1.0.76</bns:description>
+  <bns:object>
+    <Operation>
+      <Archiving directory="" enabled="false"/>
+      <Configuration>
+        <WebServicesServerListenAction inputType="none"
+                                       objectName="ListFlows"
+                                       operationType="GET"
+                                       outputType="singlejson"
+                                       responseProfile="563233ff-96b8-44b5-abe4-b6a4412f4852"
+                                       responseContentType="application/json"/>
+      </Configuration>
+      <Tracking>
+        <TrackedFields/>
+      </Tracking>
+      <Caching/>
+    </Operation>
+  </bns:object>
+</bns:Component>

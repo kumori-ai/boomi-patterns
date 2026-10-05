@@ -1,0 +1,36 @@
+{
+  "properties": {},
+  "documentTitle": "Kumori",
+  "cssURLs": [],
+  "cssContent": "/* Kumori paper theme for Boomi Flow (2026-10-05) */\n:root { --kumori-paper:#f5f5f4; --kumori-cream:#efe9dd; --kumori-ink:#1b1b1a; --kumori-amber:#e8a33a; }\nbody, .flow, .mw-bs { background: var(--kumori-paper) !important; color: var(--kumori-ink);\n  font-family: system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif; }\nh1, h2, h3, .page-title { color: var(--kumori-ink); font-weight: 600; letter-spacing: -0.01em; }\na { color: var(--kumori-ink); text-decoration-color: var(--kumori-amber); }\n.btn, button, .outcome { background: var(--kumori-ink) !important; color: var(--kumori-paper) !important;\n  border: 1px solid var(--kumori-ink) !important; border-radius: 8px !important; }\n.btn:hover, button:hover, .outcome:hover { background: var(--kumori-amber) !important; color: var(--kumori-ink) !important; }\ntable, .table { background: var(--kumori-cream); border-radius: 10px; border-collapse: separate; overflow: hidden; }\nth { background: var(--kumori-ink); color: var(--kumori-paper); font-weight: 600; }\ntd, th { padding: 10px 14px !important; border-color: rgba(27,27,26,0.12) !important; }\n",
+  "jsURLs": [],
+  "jsContent": "",
+  "logoURL": "https://kumori.ai/static/images/brand/favicon.svg",
+  "title": "Kumori",
+  "dateCreated": "2026-10-05T17:23:48.916216+00:00",
+  "dateModified": "2026-10-05T17:24:12.865734+00:00",
+  "whoCreated": {
+    "id": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
+    "firstName": "ANDY",
+    "lastName": "TILLO",
+    "email": "<REDACTED>"
+  },
+  "whoModified": {
+    "id": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
+    "firstName": "ANDY",
+    "lastName": "TILLO",
+    "email": "<REDACTED>"
+  },
+  "whoOwner": {
+    "id": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
+    "firstName": "ANDY",
+    "lastName": "TILLO",
+    "email": "<REDACTED>"
+  },
+  "discourageSearchEngines": true,
+  "navigationLanguages": [],
+  "id": "29959ebc-0d00-4866-a0cd-8fc08aaabd96",
+  "elementType": "THEME",
+  "developerName": "kumori",
+  "developerSummary": "Kumori paper palette: off-white #f5f5f4, cream, charcoal ink #1b1b1a, honey amber #e8a33a; system-ui type."
+}

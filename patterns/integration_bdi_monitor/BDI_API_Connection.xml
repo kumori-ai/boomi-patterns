@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bns:Component xmlns:bns="http://api.platform.boomi.com/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               name="BDI API (api.rivery.io)"
+               type="connector-settings"
+               subType="officialboomi-X3979C-rest-prod"
+               folderId="Rjo4ODgyMTUz" componentId="9b86387e-6477-4380-82e2-030c1f8b556c">
+  <bns:encryptedValues/>
+  <bns:description>Boomi Data Integration REST API. Auth NONE at the connection: the bearer token is injected per request from DPP_BDI_AUTH, which is set only through Environment Extensions. | built with boomi-companion v1.0.76</bns:description>
+  <bns:object>
+    <GenericConnectionConfig>
+      <field id="url" type="string" value="https://api.rivery.io"/>
+      <field id="auth" type="string" value="NONE"/>
+      <field id="connectTimeout" type="integer" value="-1"/>
+      <field id="readTimeout" type="integer" value="-1"/>
+      <field id="cookieScope" type="string" value="GLOBAL"/>
+      <field id="enableConnectionPooling" type="boolean" value="false"/>
+    </GenericConnectionConfig>
+  </bns:object>
+</bns:Component>
