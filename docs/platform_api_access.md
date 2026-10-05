@@ -100,3 +100,10 @@ It was found in the composer's own JavaScript (`/assets/flow-admin.js`).
 - **A Flow package export (`GET /api/package/1/flow/<id>/<version>`) contains a Password-typed Value's default in
   plain text.** Our listener credential was in it. Scrub every export before committing; this repo's export was
   redacted and checked against the live secret values.
+
+## Flow players by API (measured 2026-10-05)
+- `GET /{tenant}/player` lists players (`["default"]` on a new tenant); `GET /{tenant}/play/{name}` returns a player's HTML.
+- `POST /{tenant}/play/{name}` creates or updates one. Body: `application/x-www-form-urlencoded; charset=UTF8`, a literal `=` then the
+  URL-encoded HTML (the spec's "=player content goes here"). Sent as a normal form field, it fails with "Form key length limit 2048".
+- The default player is ~40 lines: a `<base href=".../runtime/nextgen/">`, `assets/flow.css`, `assets/flow.js` and `<div id="flow-app">`.
+  Our `kumori` player wraps that with kumori.ai's header, Google Fonts, styles and footer; Boomi's docs say a player can be customized completely.

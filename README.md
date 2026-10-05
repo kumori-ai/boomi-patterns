@@ -40,7 +40,7 @@ Every press of the button on kumori.ai (or in the Flow app) runs this chain, rea
 `checks/check_bdi_bridge.py` proves every step: 401 without a login, then the same pipelines through the listener,
 kumori.ai and the Flow app. Component XMLs: `patterns/integration_bdi_monitor/`.
 
-Try it: [the live Flow app](https://us.flow-prod.boomi.com/c0bdf205-0a20-4865-8a4e-5bb408d5ba0b/play/theme/kumori?flow-id=0438716c-4fa5-447c-9779-4a93924aa80b).
+Try it: [the live Flow app](https://kumori.ai/demo/boomi).
 
 ## The runtime, built the way we build for clients
 Boomi's official runtime container on Google's Container-Optimized OS (Shielded VM, no service account), in a project
