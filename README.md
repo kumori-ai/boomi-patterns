@@ -23,6 +23,23 @@ the docs alone, and every write-up ends with field notes: what a team should kno
 Together they make one chain, and kumori.ai's "Run it live" button uses the same listener:
 `Flow page -> OpenAPI connector -> Cloudflare -> Integration runtime (GCP) -> process -> BDI Rivers API`.
 
+## What one request calls
+Every press of the button on kumori.ai (or in the Flow app) runs this chain, read-only:
+1. **Caller**: kumori.ai's `/api/boomi/flows`, or Boomi Flow through its OpenAPI connector *Kumori BDI Listener*
+   (spec: `patterns/integration_bdi_monitor/wss_list_flows.openapi.yaml`), sends
+   `GET https://boomi.kumori.ai/ws/simple/getListFlows` with a Basic-auth login.
+2. **Edge**: Cloudflare passes it to our Google Cloud VM; the gateway (Caddy) forwards only Boomi listener paths
+   (`/ws/*`, `/fs/*`) to the runtime and answers everything else with 404.
+3. **Boomi Integration**: the Web Services Server operation *[WSS] BDI List Pipelines* starts the process
+   *[LISTENER] BDI List Pipelines*, which calls the subprocess *[SUB] BDI List Pipelines*.
+4. **Integration to Data Integration**: the subprocess's REST step *BDI Rivers API: List Pipelines* calls
+   `GET https://api.rivery.io/v1/accounts/{account}/environments/{environment}/rivers`, with the BDI token from an
+   environment extension (never stored in a component).
+5. **Boomi Data Integration** returns the pipeline list, and it travels back the same way.
+
+`checks/check_bdi_bridge.py` proves every step: 401 without a login, then the same pipelines through the listener,
+kumori.ai and the Flow app. Component XMLs: `patterns/integration_bdi_monitor/`.
+
 Try it: [the live Flow app](https://us.flow-prod.boomi.com/c0bdf205-0a20-4865-8a4e-5bb408d5ba0b/play/theme/kumori?flow-id=0438716c-4fa5-447c-9779-4a93924aa80b).
 
 ## The runtime, built the way we build for clients
