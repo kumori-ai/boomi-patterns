@@ -136,3 +136,6 @@ each failed run billed 0 credits unless noted.
   - Flow's OpenAPI connector: four separate surprises, all in platform_api_access.md.
 - The FSS build (aug9) needs a Flow Services Server connector (not in 1979's catalog) and Standard licenses (none on the trial), so it moved to
   `_antiquated/`. The WSS + OpenAPI route replaced it.
+- 2026-10-05: the aug9 build was retired on the platform too. The Flow Service deployment was removed
+  (`DELETE /DeployedPackage/<id>`) and its 7 components soft-deleted with `DELETE /ComponentMetadata/<id>`
+  (restorable; `deleted: true` confirmed on read-back). The aug9 listener login left KUMORI_BOOMI_INTEGRATION_LISTENER.
