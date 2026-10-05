@@ -4,6 +4,9 @@ Working, checked patterns for Boomi Data Integration (BDI, formerly Rivery), Boo
 built and driven entirely by API, with the field notes that make the next build fast. By Kumori (https://kumori.ai),
 who design and build integrations on the Boomi platform.
 
+**The story, with a live button:** [How Boomi Data Integration cleaned up Kumori's data in a day](https://kumori.ai/whats-new/boomi-data-integration)
+on kumori.ai. This repo is the code behind it.
+
 **Unofficial.** Not made, reviewed or endorsed by Boomi. Built on Boomi Companion
 (github.com/OfficialBoomi/boomi-companion), used as published.
 

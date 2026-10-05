@@ -83,7 +83,7 @@
     "pageElementIds": {
       "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1": {
         "guid": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
-        "versionId": "eb544905-f9c8-4da0-bf17-c75f66e992eb",
+        "versionId": "6142136b-e131-44b0-b8f0-fea8cdd9b238",
         "elementType": "PAGE_LAYOUT",
         "developerName": "BDI pipeline page",
         "contentType": null,
@@ -91,7 +91,7 @@
       },
       "b285f049-9a2f-4638-93c7-3b58bb96ce84": {
         "guid": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
-        "versionId": "dc5c048e-a047-498f-93a7-e9035dfb42ff",
+        "versionId": "0842709b-7bc7-4f34-81d2-2c3961f36774",
         "elementType": "PAGE_LAYOUT",
         "developerName": "BDI pipelines page",
         "contentType": null,
@@ -189,7 +189,7 @@
     "translationNotes": null,
     "compositeId": {
       "guid": "0438716c-4fa5-447c-9779-4a93924aa80b",
-      "versionId": "d52f8281-3927-41c3-9d0a-064747fd2db7",
+      "versionId": "ac91fe65-ffa4-48de-b476-252a2248b4be",
       "elementType": null,
       "developerName": "Kumori BDI Monitor",
       "contentType": null,
@@ -197,8 +197,8 @@
     },
     "developerName": "Kumori BDI Monitor",
     "developerSummary": "Kumori x Boomi: BDI data flow status via Boomi Integration (built via API, 2026-10-05)",
-    "dateCreated": "2026-10-05T19:24:17.5204348+00:00",
-    "dateModified": "2026-10-05T19:24:17.5204349+00:00",
+    "dateCreated": "2026-10-05T20:13:52.9967636+00:00",
+    "dateModified": "2026-10-05T20:13:52.9967683+00:00",
     "userCreated": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
     "userModified": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
     "userOwner": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
@@ -363,48 +363,58 @@
     },
     {
       "elementId": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
-      "elementVersionId": "eb544905-f9c8-4da0-bf17-c75f66e992eb",
+      "elementVersionId": "6142136b-e131-44b0-b8f0-fea8cdd9b238",
       "elementType": "PAGE_LAYOUT",
       "contentValueDocumentTranslations": {
         "08ce8291-657f-4be0-a4f5-c8453a68457e": {
           "contentValues": {
             "1b93946d-f96d-4d76-8a92-d00fb1790504": "",
             "3f1d5ac8-f504-4ff1-a8e5-505857950bd9": "One pipeline",
+            "47a93457-20d1-423c-a99f-2b323666faa5": "<p><strong>How we built this:</strong> the full story, with a live button, is on <a href=\"https://kumori.ai/whats-new/boomi-data-integration\" target=\"_blank\" rel=\"noopener\">kumori.ai</a>, and the Integration processes, this Flow app and the checks are on <a href=\"https://github.com/kumori-ai/boomi-patterns\" target=\"_blank\" rel=\"noopener\">GitHub</a>.</p>",
             "54318870-7182-4979-96d0-719ff621e7ab": null,
+            "753f6d84-3b57-4682-a287-b3decfbad469": null,
+            "9e611019-ff32-4ed3-9f43-1e091ac1318d": null,
             "a5d12587-9742-40ed-a2a9-3fb81e98cc0f": "<h2>flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|b933e300-9edb-49e9-9f35-8259cf69fdaf___flowkey</h2><ul><li><strong>Type:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|952cf1d8-c3d6-4c01-9930-c28f78748ee5___flowkey</li><li><strong>Status:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|3715dfca-ac1f-45f9-89b3-a1485ba012e9___flowkey</li><li><strong>Last updated:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|48b4c761-be7e-4524-9baf-8b367d4a2f06___flowkey</li><li><strong>Pipeline id:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|31993c96-5f6f-4984-ae72-6893accb8af5___flowkey</li></ul><p>Read from Boomi Data Integration at flowkey___600dc255-26d2-4bc0-89ef-4b185b347945|00000000-0000-0000-0000-000000000000___flowkey (UTC). <em>Check again</em> asks BDI afresh.</p>",
             "a80dcc37-c3df-42d9-b5f1-06d634dfeed4": null,
+            "a883ba6d-5340-4001-880f-800a457d8030": "",
+            "aea128e6-538d-4284-8917-6d5466346f44": null,
             "d5c15bc8-3bbc-4e71-9c7a-100783d4062e": null,
             "dd08952c-dd6c-4276-8431-837aefc7249e": null
           },
           "contentValuesState": null
         }
       },
-      "dateCreated": "2026-10-05T18:59:03.4068982+00:00",
-      "dateModified": "2026-10-05T18:59:03.4068967+00:00",
+      "dateCreated": "2026-10-05T20:13:51.9846907+00:00",
+      "dateModified": "2026-10-05T20:13:51.9846889+00:00",
       "userCreated": "00000000-0000-0000-0000-000000000000",
       "userModified": "00000000-0000-0000-0000-000000000000",
       "userOwner": "00000000-0000-0000-0000-000000000000"
     },
     {
       "elementId": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
-      "elementVersionId": "dc5c048e-a047-498f-93a7-e9035dfb42ff",
+      "elementVersionId": "0842709b-7bc7-4f34-81d2-2c3961f36774",
       "elementType": "PAGE_LAYOUT",
       "contentValueDocumentTranslations": {
         "08ce8291-657f-4be0-a4f5-c8453a68457e": {
           "contentValues": {
+            "0527b23c-58fc-4c9b-bbb7-4a7c677be5b5": null,
             "0d3f8d6c-047c-468d-9cfa-6141d15e455e": null,
             "12985952-d8fa-4a76-b7d3-8f03ca881a94": "<p><strong>Fetched live</strong> at flowkey___600dc255-26d2-4bc0-89ef-4b185b347945|00000000-0000-0000-0000-000000000000___flowkey (UTC), through Flow, Cloudflare, our Boomi Integration runtime and the Boomi Data Integration API. Press <em>Ask again</em> and watch the time change.</p>",
             "40fb59ee-5a63-437f-b3ac-719b319e3b50": null,
             "4146fcdc-694a-4bab-a9f0-51ab35b6b6da": "",
+            "459d1c37-bd5c-46fe-99de-07d1def124c3": null,
             "5094804e-3d3a-4858-9420-49e5fbc564af": "Last updated",
             "5095b3b2-0305-47f0-b055-1e6a9f9c5b67": null,
             "50def603-60f4-4142-8cb8-533c8c666cb7": "",
             "58076234-064a-4eb3-8a0c-df0ea89a5bd1": "Pipeline",
             "5e86c592-4967-4f8f-9e71-bbb6c8ec508b": "Status",
+            "5f0cae80-ffbc-4a5d-bda1-5f42caf72956": null,
             "747e5abb-a678-416d-bbc7-861f9d016505": null,
             "95ad61f2-38d8-47bc-a110-e3c4c84daf67": null,
             "9dc16899-04ac-4f1c-ad26-0af51e32affa": "Pipelines in Boomi Data Integration",
             "a2c989cc-96b8-4edc-852d-2dfcef471403": "Type",
+            "b12cfdd0-1c08-4c29-805a-3e5a885857e4": "<p><strong>How we built this:</strong> the full story, with a live button, is on <a href=\"https://kumori.ai/whats-new/boomi-data-integration\" target=\"_blank\" rel=\"noopener\">kumori.ai</a>, and the Integration processes, this Flow app and the checks are on <a href=\"https://github.com/kumori-ai/boomi-patterns\" target=\"_blank\" rel=\"noopener\">GitHub</a>.</p>",
+            "c85716f8-71e8-45fe-af4c-400ca30638bb": "",
             "dd5b8136-10ff-442f-b62d-4fc5516ca6c1": "",
             "e734de63-3c4b-42c7-ae6f-4e974e730495": null,
             "f02b5104-67ea-4730-98da-de7a87150f12": "Data pipelines"
@@ -412,8 +422,8 @@
           "contentValuesState": null
         }
       },
-      "dateCreated": "2026-10-05T18:59:02.4215509+00:00",
-      "dateModified": "2026-10-05T18:59:02.4215487+00:00",
+      "dateCreated": "2026-10-05T20:13:50.9680974+00:00",
+      "dateModified": "2026-10-05T20:13:50.9680963+00:00",
       "userCreated": "00000000-0000-0000-0000-000000000000",
       "userModified": "00000000-0000-0000-0000-000000000000",
       "userOwner": "00000000-0000-0000-0000-000000000000"
@@ -2076,6 +2086,57 @@
           "versionId": "00000000-0000-0000-0000-000000000000",
           "parentId": "00000000-0000-0000-0000-000000000000",
           "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "c340d05e-3cb3-4678-8874-4c4dc0358526",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "51133005-05ef-4d2e-882f-eb66a8122aad",
+          "developerName": "How we built this",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "47a93457-20d1-423c-a99f-2b323666faa5"
+          },
+          "imageUriContentValueId": {
+            "guid": "a883ba6d-5340-4001-880f-800a457d8030"
+          },
+          "labelContentValueId": {
+            "guid": "9e611019-ff32-4ed3-9f43-1e091ac1318d"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "aea128e6-538d-4284-8917-6d5466346f44"
+          },
+          "helpInfoContentValueId": {
+            "guid": "753f6d84-3b57-4682-a287-b3decfbad469"
+          },
+          "order": 1,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "c340d05e-3cb3-4678-8874-4c4dc0358526",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
         }
       ],
       "pageConditions": null,
@@ -2084,7 +2145,7 @@
       "modernPageLayout": false,
       "compositeId": {
         "guid": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
-        "versionId": "eb544905-f9c8-4da0-bf17-c75f66e992eb",
+        "versionId": "6142136b-e131-44b0-b8f0-fea8cdd9b238",
         "elementType": "PAGE_LAYOUT",
         "developerName": "BDI pipeline page",
         "contentType": null,
@@ -2093,7 +2154,7 @@
       "developerName": "BDI pipeline page",
       "developerSummary": null,
       "dateCreated": "2026-10-05T18:57:46.329353+00:00",
-      "dateModified": "2026-10-05T19:01:29.701812+00:00",
+      "dateModified": "2026-10-05T20:13:52.964024+00:00",
       "userCreated": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userModified": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userOwner": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
@@ -2331,6 +2392,57 @@
           "versionId": "00000000-0000-0000-0000-000000000000",
           "parentId": "00000000-0000-0000-0000-000000000000",
           "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "0d4129a8-d703-40c6-880b-7b0b0b80fe3f",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "developerName": "How we built this",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "b12cfdd0-1c08-4c29-805a-3e5a885857e4"
+          },
+          "imageUriContentValueId": {
+            "guid": "c85716f8-71e8-45fe-af4c-400ca30638bb"
+          },
+          "labelContentValueId": {
+            "guid": "0527b23c-58fc-4c9b-bbb7-4a7c677be5b5"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "459d1c37-bd5c-46fe-99de-07d1def124c3"
+          },
+          "helpInfoContentValueId": {
+            "guid": "5f0cae80-ffbc-4a5d-bda1-5f42caf72956"
+          },
+          "order": 2,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "0d4129a8-d703-40c6-880b-7b0b0b80fe3f",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
         }
       ],
       "pageConditions": null,
@@ -2339,7 +2451,7 @@
       "modernPageLayout": false,
       "compositeId": {
         "guid": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
-        "versionId": "dc5c048e-a047-498f-93a7-e9035dfb42ff",
+        "versionId": "0842709b-7bc7-4f34-81d2-2c3961f36774",
         "elementType": "PAGE_LAYOUT",
         "developerName": "BDI pipelines page",
         "contentType": null,
@@ -2348,7 +2460,7 @@
       "developerName": "BDI pipelines page",
       "developerSummary": null,
       "dateCreated": "2026-10-05T18:57:44.234516+00:00",
-      "dateModified": "2026-10-05T19:01:29.701812+00:00",
+      "dateModified": "2026-10-05T20:13:52.964024+00:00",
       "userCreated": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userModified": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",
       "userOwner": "e9aef714-10bb-49b8-ba5c-124c9a54e08f",

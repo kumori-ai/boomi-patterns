@@ -9,6 +9,7 @@ A Boomi Flow app, "Kumori BDI Monitor", that tells its own story in three screen
 
 Data loads through Flow's OpenAPI connector, which calls the Integration listener in `../integration_bdi_monitor`.
 Everything here was created through the Flow API; no step needed the Flow console.
+The full story behind it: [kumori.ai/whats-new/boomi-data-integration](https://kumori.ai/whats-new/boomi-data-integration).
 [Open the live app](https://us.flow-prod.boomi.com/c0bdf205-0a20-4865-8a4e-5bb408d5ba0b/play/theme/kumori?flow-id=0438716c-4fa5-447c-9779-4a93924aa80b).
 
 **This is Kumori's own live tenant (niftyg, c0bdf205-0a20-4865-8a4e-5bb408d5ba0b), ids included.** The export was
