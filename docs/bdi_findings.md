@@ -126,7 +126,7 @@ each failed run billed 0 credits unless noted.
 - `checks/check_bdi_bridge.py`, as of 2026-10-05: PASS. Listener refuses anonymous (401); Integration -> BDI 3 rivers
   in 872 ms; kumori.ai live, 868 ms upstream; Flow table loaded 3 rivers, run 1,882 ms. The check was made to fail
   first (wrong listener path -> FAIL 404; wrong table name -> FAIL).
-- What tripped us up:
+- Field notes:
   - Listener auth is checked only once a listener is deployed: before that the runtime answers 404 on every /ws/ path.
   - The listener token was set by API after the console route stalled twice on the clipboard (see platform_api_access.md).
   - kumori.ai first read the listener login from a secret it had no IAM grant on (403, surfaced as "not live yet").
@@ -134,5 +134,5 @@ each failed run billed 0 credits unless noted.
   - kumori.ai first read BDI's field names wrong (`type`/`status` vs `river_type`/`river_status`); the test fixture
     had the same wrong shape, so it passed. It now uses the real response.
   - Flow's OpenAPI connector: four separate surprises, all in platform_api_access.md.
-- The FSS build (aug9) never ran (trial has no Standard connector licenses; 1979 has no FSS connector) and moved to
+- The FSS build (aug9) needs a Flow Services Server connector (not in 1979's catalog) and Standard licenses (none on the trial), so it moved to
   `_antiquated/`. The WSS + OpenAPI route replaced it.

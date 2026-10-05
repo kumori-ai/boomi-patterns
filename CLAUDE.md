@@ -15,8 +15,9 @@ their own. Unofficial: never imply Boomi endorses it, never name a fork or tool 
 - **A pattern exists only if it ran.** Every pattern in `patterns/` has a check in `checks/`
   and a dated result ("as of 2026-10-07, ran in 41s, 12,400 rows"). No pattern documented
   from the docs alone.
-- **Write down what broke.** Each pattern's write-up has a "what tripped us up" section. That
-  is the part that proves hands-on time; never drop it to make a page look cleaner.
+- **Field notes, framed as expertise.** Each pattern's write-up ends with field notes: what a team should know before
+  building the same thing. Same facts, stated as know-how, never as a list of what broke (Andy, 2026-10-05: "the point
+  is that we are good at BDI and have a clean way to do it"). Public copy (repo, kumori.ai, the Flow app) is confident.
 - **Boomi Companion stays upstream.** `bc-bdi` is enabled in `.claude/settings.json` and is
   used for every build step. Never vendor or edit it; our layer sits beside it. Feedback on it
   goes to developer-offerings@boomi.com, not a fork.

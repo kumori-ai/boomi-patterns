@@ -6,7 +6,8 @@
 1. Listener auth: GET without credentials must be 401 (a 200 would mean the listener is open).
 2. Integration -> BDI: GET with the listener login returns the BDI rivers list.
 3. kumori.ai -> Integration: /api/boomi/flows (the "Run it live" button) answers live with the same rivers.
-4. Flow -> Integration: run the Kumori BDI Monitor flow headlessly and load its table through the OpenAPI connector.
+4. Flow -> Integration: run the Kumori BDI Monitor flow headlessly, press its button, and read the table it loads
+   through the OpenAPI connector.
 Every link must return the same river names. Zero rivers is an error, never a pass: an empty list proves nothing.
 Read-only: listing rivers runs nothing in BDI and spends no credits. Credentials come from kumori-404602 Secret Manager.
 """
@@ -21,7 +22,8 @@ KUMORI = 'https://kumori.ai/api/boomi/flows'
 ACCOUNT = '1979-44C86S'
 TENANT = 'c0bdf205-0a20-4865-8a4e-5bb408d5ba0b'
 FLOW = '0438716c-4fa5-447c-9779-4a93924aa80b'
-TABLE = 'BDI flows'
+ASK = 'Ask BDI for its pipelines'
+LIST_PAGE = 'Pipelines'
 
 
 def secret(name):
@@ -75,28 +77,30 @@ def main():
     code, text, _ = curl(f'{api}/api/run/1/state', *hdr, body={'id': FLOW})
     if code != '200':
         fail(f'Flow run init answered {code}: {text[:200]}')
-    state = json.loads(text)
-    sid, token = state['stateId'], state['stateToken']
-    code, text, _ = curl(f'{api}/api/run/1/state/{sid}', *hdr, body={
-        'stateId': sid, 'stateToken': token, 'currentMapElementId': state.get('currentMapElementId'),
-        'invokeType': 'FORWARD', 'mapElementInvokeRequest': {'selectedOutcomeId': None}})
-    if code != '200':
-        fail(f'Flow forward answered {code}: {text[:200]}')
-    run = json.loads(text)
-    page = (run.get('mapElementInvokeResponses') or [{}])[0].get('pageResponse') or {}
-    table = next((c for c in page.get('pageComponentResponses') or [] if c.get('developerName') == TABLE), None)
-    if not table:
-        fail(f'Flow page has no {TABLE!r} table')
-    req = next(d for d in page['pageComponentDataResponses'] if d['pageComponentId'] == table['id'])['objectDataRequest']
-    req['token'] = run.get('stateToken')
-    code, text, _ = curl(f'{api}/api/run/1/service/data', *hdr, body=req)
-    if code != '200':
-        fail(f'Flow table load answered {code}: {text[:200]}')
-    flow_names = sorted(next(p['contentValue'] for p in r['properties'] if p['developerName'] == 'name')
-                        for r in json.loads(text).get('objectData') or [])
+    run, sid = json.loads(text), None
+    sid = run['stateId']
+
+    def step(prev, label=None):
+        resp = (prev.get('mapElementInvokeResponses') or [{}])[0]
+        oc = next((o['id'] for o in resp.get('outcomeResponses') or [] if o['label'] == label), None) if label else None
+        if label and not oc:
+            fail(f'Flow page {resp.get("developerName")!r} has no {label!r} button')
+        code, text, _ = curl(f'{api}/api/run/1/state/{sid}', *hdr, body={
+            'stateId': sid, 'stateToken': prev['stateToken'], 'currentMapElementId': prev.get('currentMapElementId'),
+            'invokeType': 'FORWARD', 'mapElementInvokeRequest': {'selectedOutcomeId': oc, 'pageRequest': {'pageComponentInputResponses': []}}})
+        if code != '200':
+            fail(f'Flow step {label or "start"} answered {code}: {text[:200]}')
+        return json.loads(text)
+
+    run = step(step(run), ASK)  # start -> intro page -> press the button: Flow loads BDI's pipelines through the connector
+    page = (run.get('mapElementInvokeResponses') or [{}])[0]
+    if page.get('developerName') != LIST_PAGE:
+        fail(f'Flow landed on {page.get("developerName")!r}, expected {LIST_PAGE!r}')
+    rows = [o for d in page['pageResponse']['pageComponentDataResponses'] for o in d.get('objectData') or []]
+    flow_names = sorted(next(p['contentValue'] for p in r['properties'] if p['developerName'] == 'name') for r in rows)
     if flow_names != names:
         fail(f'Flow table rivers differ from the listener: {flow_names}')
-    results.append(f'Flow -> Integration: table loaded {len(flow_names)} rivers, run took {int((time.monotonic() - t0) * 1000)} ms')
+    results.append(f'Flow -> Integration: pressed {ASK!r}, table loaded {len(flow_names)} rivers, run took {int((time.monotonic() - t0) * 1000)} ms')
 
     print(f'PASS as of {date.today().isoformat()}')
     for r in results:

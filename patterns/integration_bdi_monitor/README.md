@@ -39,10 +39,11 @@ behind Caddy and Cloudflare at https://boomi.kumori.ai).
 
 Check: `python3 checks/check_bdi_bridge.py` (as of 2026-10-05: PASS, 3 rivers, 872 ms through the listener).
 
-## What tripped us up
+## Field notes
 - The runtime's shared web server defaults to listener auth NONE. Set BASIC before deploying any listener.
 - With no listener deployed the runtime answers 404 on every /ws/ path before checking auth, so a 404 says nothing
   about auth. Test against a deployed listener: 401 without credentials, 200 with them.
-- The first build used a Flow Services Server listener on the trial account (aug9). It never ran: the trial has no
-  Standard connector licenses, and account 1979 has no FSS connector at all (`subType fss is invalid`). It is kept
-  out of this pattern; the WSS listener plus Flow's OpenAPI connector replaced it.
+- Flow Services Server (FSS) is the classic Flow-to-Integration bridge, but it is not in every account's connector
+  catalog (account 1979 has none: `subType fss is invalid`), and a trial account has no Standard connector licenses
+  to deploy it. A Web Services Server listener plus Flow's OpenAPI connector works on any account, and is the route
+  this pattern uses.
