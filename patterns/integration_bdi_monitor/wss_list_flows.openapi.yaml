@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Kumori BDI Monitor listener
+  version: "1.0"
+  description: Boomi Integration Web Services Server listener that lists Boomi Data Integration flows (read-only).
+servers:
+  - url: https://boomi.kumori.ai
+security:
+  - listenerAuth: []
+paths:
+  /ws/simple/getListFlows:
+    get:
+      operationId: listFlows
+      security:
+        - listenerAuth: []
+      summary: List BDI flows
+      responses:
+        "200":
+          description: BDI Rivers API list, passed through by the Integration process
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FlowList"
+components:
+  securitySchemes:
+    listenerAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: "Basic <base64 user:token> for the runtime's shared web server user"
+  schemas:
+    FlowList:
+      type: object
+      properties:
+        total_items:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Flow"
+    Flow:
+      type: object
+      properties:
+        river_cross_id:
+          type: string
+        name:
+          type: string
+        river_type:
+          type: string
+        river_status:
+          type: string
+        last_updated_at:
+          type: string
+        description:
+          type: string

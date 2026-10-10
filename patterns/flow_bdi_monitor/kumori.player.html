@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Kumori BDI Monitor: Boomi Data Integration pipelines, read live through Boomi Integration, in an app built in Boomi Flow." />
+<meta name="theme-color" content="#f5f5f4" />
+<base href="https://us.flow-prod.boomi.com/runtime/nextgen/" />
+<title>Kumori · Live Boomi demo</title>
+<link rel="icon" href="https://kumori.ai/static/images/brand/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="assets/flow.css" rel="stylesheet" />
+<style>
+html,body{margin:0}
+/* Kumori theme for the Boomi Flow player. Linked from the Flow theme "kumori" (cssURLs), so the player uses
+   kumori.ai's own fonts and tokens; fonts load from Google Fonts like kumori.ai does. App: Kumori BDI Monitor. */
+:root{--bg-1:#ffffff;--bg-2:#f5f5f4;--bg-3:#efefed;--ink:#1b1b1a;--ink-2:#595855;--ink-3:#6c6b66;--line:#e7e7e5;--sun:#e8a33a;--sun-soft:#f6e6c8;--sun-text:#8a5a12}
+html,body,.flow,.mw-bs{background:var(--bg-2)!important;color:var(--ink);font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+main.flow{max-width:none}
+header.page-header{background:var(--bg-1);border-bottom:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.04);padding:12px 24px!important;margin:0}
+.header-brand{display:flex;align-items:center;gap:10px;max-width:980px;margin:0 auto}
+header .header-image{width:34px!important;height:34px!important;border-radius:9px}
+header h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.45rem!important;margin:0!important;letter-spacing:-.01em}
+section.content{max-width:980px;margin:0 auto;padding:28px 20px 48px}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+h2{font-size:1.7rem;margin:.4em 0}h3{font-size:1.2rem;margin:1.4em 0 .4em}
+a{color:var(--sun-text);font-weight:600;text-decoration:none}a:hover{text-decoration:underline}
+code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.85em}
+.page-component-presentation{background:var(--bg-1);border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin:0 0 18px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 30px rgba(0,0,0,.06)}
+/* intro hero */
+.k-hero-card .page-component-presentation{background:none;border:0;box-shadow:none;padding:0;margin:0}
+.k-hero-card{background:linear-gradient(160deg,color-mix(in srgb,var(--sun) 16%,var(--bg-1)) 0%,var(--bg-1) 58%);padding:34px 34px 28px}
+.k-kicker{display:inline-flex;align-items:center;gap:8px;margin:0;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sun-text)}
+.k-dot{width:9px;height:9px;border-radius:50%;background:var(--sun);animation:k-dot 2s ease-out infinite}
+@keyframes k-dot{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--sun) 70%,transparent)}70%,100%{box-shadow:0 0 0 11px transparent}}
+.k-hero h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.12;margin:12px 0 10px}
+.k-lede{font-size:1.08rem;color:var(--ink-2);max-width:64ch;margin:0}
+.k-hops{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0 4px;padding:0}
+.k-hops li{display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--bg-1);font-size:.82rem;color:var(--ink-2);line-height:1.35}
+.k-hops b{color:var(--ink);font-weight:600;font-size:.9rem}
+.k-hop-n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink-3);font-size:.72rem;font-weight:700;color:var(--ink)}
+.k-safe{margin:14px 0 0;font-size:.88rem;color:var(--ink-2)}
+/* buttons */
+.outcomes{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 18px}
+.button,.btn,button{font-family:inherit;border-radius:999px!important;padding:10px 22px!important;font-weight:600;border:1.5px solid var(--ink)!important;background:var(--bg-1)!important;color:var(--ink)!important;transition:transform .15s ease,box-shadow .15s ease}
+.button:hover,button:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.button.submit,.button-outcome.submit{background:var(--sun)!important;border-color:var(--sun)!important;color:#1b1b1a!important;font-weight:700;box-shadow:0 6px 18px color-mix(in srgb,var(--sun) 45%,transparent)}
+.k-hero-card .button-outcome.submit{font-size:1.2rem;padding:16px 38px!important;box-shadow:0 10px 28px color-mix(in srgb,var(--sun) 55%,transparent)}
+.k-hero-card .button-outcome.submit::before{content:"\25B6\00a0\00a0"}
+/* tables */
+.table-wrapper{background:var(--bg-1);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+table{width:100%;border-collapse:collapse!important;background:var(--bg-1)!important}
+table th{background:#fafaf9!important;color:var(--sun-text)!important;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border-bottom:1px solid var(--line)!important;white-space:nowrap}
+table td,table th{padding:12px 14px!important;text-align:left;border-color:var(--line)!important}
+table tbody tr{background:var(--bg-1)!important}table tbody tr:nth-child(even){background:var(--bg-3)!important}table tbody tr:hover{background:#e9e8e4!important}
+table td{color:var(--ink-2)}table td .button-outcome{padding:5px 14px!important;font-size:.85rem;box-shadow:none}
+.k-num{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 6px;margin-right:10px;border-radius:8px;background:var(--sun);color:var(--ink);font-weight:700;font-size:.8rem}
+.k-name{font-weight:600;color:var(--ink)}
+.k-status{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;border:1px solid var(--ink-2);font-size:.82rem;font-weight:600;color:var(--ink)}
+.k-status.on{border:2px solid var(--ink)}
+.k-details{font-size:.95rem}.k-details h3:first-child{margin-top:0}
+.k-hide{display:none!important}
+@media (prefers-reduced-motion:reduce){.button,button{transition:none}.k-dot{animation:none}}
+@media (max-width:760px){.k-hops{grid-template-columns:1fr}.k-hops li{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:8px}.k-hops li span:last-child{flex-basis:100%;padding-left:30px}}
+@media (max-width:640px){section.content{padding:0 12px 40px}.page-component-presentation{padding:18px 16px}.k-hero-card .page-component-presentation{background:none;border:0;box-shadow:none;padding:0;margin:0}
+.k-hero-card{padding:24px 18px}
+.outcomes{flex-direction:column}.button,.btn,button{width:100%;justify-content:center;text-align:center}table td .button-outcome{width:auto}
+table th:nth-child(3),table td:nth-child(3){display:none}}
+
+/* player shell: kumori.ai header and footer */
+:root{--container-max-width:100%}
+header.page-header{display:none!important}
+.kp-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg-1) 92%,transparent);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+.kp-nav-in{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+.kp-nav a{color:var(--ink-2);font-weight:500;font-size:.95rem;text-decoration:none}
+.kp-nav a:hover{color:var(--ink)}
+.kp-brand img{display:block;height:30px;width:auto}
+.kp-links{display:flex;gap:22px;flex:1}
+.kp-right{display:flex;gap:18px;align-items:center}
+.kp-right a.kp-cta{color:#1b1b1a;background:var(--sun);padding:8px 16px;border-radius:999px;font-weight:700}
+.kp-crumb{max-width:980px;margin:22px auto 0;padding:0 20px;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sun-text)}
+.kp-crumb a{color:inherit;text-decoration:none}
+section.content{padding-top:14px}
+.k-hero-card{margin:0 0 22px;border:1px solid var(--line);border-radius:22px;padding:40px 40px 34px;background:linear-gradient(160deg,color-mix(in srgb,var(--sun) 18%,var(--bg-1)) 0%,var(--bg-1) 60%);box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 48px rgba(0,0,0,.08)}
+.k-hero-card .outcomes,.k-hero-card .page-component-outcomes{margin:24px 0 0;display:flex}
+.k-hero-card .button-outcome.submit{font-size:1.25rem;padding:17px 40px!important}
+.kp-foot{border-top:1px solid var(--line);margin-top:40px;background:var(--bg-1)}
+.kp-foot-in{max-width:980px;margin:0 auto;padding:28px 20px 40px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;font-size:.9rem;color:var(--ink-2)}
+.kp-foot b{display:block;color:var(--ink);font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.05rem;margin-bottom:6px}
+.kp-foot a{display:block;color:var(--ink-2);text-decoration:none;margin:4px 0}.kp-foot a:hover{color:var(--sun-text)}
+@media (max-width:760px){.kp-links{display:none}.kp-nav-in{gap:14px;padding:12px 16px}.kp-right > a:not(.kp-cta){display:none}.kp-foot-in{grid-template-columns:1fr}.k-hero-card .outcomes,.k-hero-card .page-component-outcomes{display:block}}
+
+
+/* fonts: Flow sets type through its own token; use kumori.ai's faces */
+:root{--font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
+.flow,.flow p,.flow li,.flow td,.flow th,.flow button,.flow a{font-family:var(--font-family)}
+.flow h1,.flow h2,.flow h3,.k-hero h1,.kp-foot b{font-family:"Fraunces",Georgia,serif!important;font-weight:500!important;letter-spacing:-.015em}
+.k-hero h1{font-size:clamp(2.1rem,4.4vw,3.1rem)!important;line-height:1.08}
+/* the CTA sits inside the hero card: the page's outcome bar follows the card, so lift it into the card's foot */
+section.content:has(.k-hero-card) > .outcomes{position:relative;z-index:2;margin:-112px 0 0;padding:0 41px 0;min-height:112px;align-items:flex-start}
+section.content:has(.k-hero-card) .k-hero-card{padding-bottom:128px!important}
+.k-hero-card .page-component-outcomes:empty,.k-hero-card .outcomes:empty{display:none}
+section.content:has(.k-hero-card) > .outcomes .button-outcome.submit{font-size:1.25rem;padding:17px 42px!important;box-shadow:0 12px 30px color-mix(in srgb,var(--sun) 55%,transparent)}
+section.content:has(.k-hero-card) > .outcomes .button-outcome.submit::before{content:"\25B6\00a0\00a0"}
+@media (max-width:640px){section.content:has(.k-hero-card) > .outcomes{margin-top:-104px;padding:0 19px;min-height:104px}section.content:has(.k-hero-card) .k-hero-card{padding-bottom:116px!important}
+section.content:has(.k-hero-card) > .outcomes .button-outcome.submit{font-size:1.1rem}}
+
+/* phones: full-width CTA inside the hero, compact menu */
+.kp-menu{display:none;position:relative}
+.kp-menu summary{list-style:none;cursor:pointer;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:.9rem;color:var(--ink)}
+.kp-menu summary::-webkit-details-marker{display:none}
+.kp-menu-panel{position:absolute;right:0;top:calc(100% + 8px);min-width:220px;background:var(--bg-1);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.12);padding:8px;display:grid}
+.kp-menu-panel a{padding:10px 12px;border-radius:10px;color:var(--ink)!important;font-weight:500}
+.kp-menu-panel a:hover{background:var(--bg-2)}
+@media (max-width:760px){.kp-menu{display:block}.kp-right .kp-cta{display:none}.kp-nav-in{justify-content:space-between}.kp-crumb{font-size:.72rem}}
+@media (max-width:640px){section.content:has(.k-hero-card) > .outcomes{padding:0 19px}
+section.content:has(.k-hero-card) > .outcomes .button-outcome.submit{width:100%;justify-content:center}}
+
+.kp-powered{max-width:980px;margin:0 auto;padding:14px 20px 26px;border-top:1px solid var(--line);font-size:.85rem;color:var(--ink-2)}
+.kp-powered b{color:var(--ink)}.kp-powered a{color:var(--sun-text)}
+.kp-powered-mark{color:var(--sun)}
+
+/* results and detail pages: the outcome bar becomes an action bar above the content */
+section.content:not(:has(.k-hero-card)){display:flex;flex-direction:column}
+section.content:not(:has(.k-hero-card)) > .outcomes{order:-1;margin:0 0 16px;padding:12px 14px;background:var(--bg-1);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.05);align-self:flex-start;gap:10px}
+section.content:not(:has(.k-hero-card)) > .outcomes .button-outcome{padding:9px 20px!important}
+@media (max-width:640px){section.content:not(:has(.k-hero-card)) > .outcomes{align-self:stretch;border-radius:18px;flex-direction:column}}
+
+/* header: says it is Boomi Flow, one way back to kumori.ai, plus the How we built it button */
+.kp-flow-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg-2);font-size:.82rem;font-weight:600;color:var(--ink-2);white-space:nowrap}
+.kp-flow-chip a{color:var(--ink)!important;font-weight:700!important}
+.kp-flow-dot{width:8px;height:8px;border-radius:50%;background:var(--sun)}
+.kp-nav-in{justify-content:space-between}
+.kp-right{flex:none}
+@media (max-width:760px){.kp-right .kp-cta{display:inline-block!important}.kp-right a.kp-home{display:none}.kp-flow-chip{font-size:.74rem;padding:5px 10px}}
+@media (max-width:480px){.kp-nav-in{flex-wrap:wrap;row-gap:10px}.kp-flow-chip{order:3;flex-basis:100%;justify-content:center}}
+.kp-foot .kp-powered b{display:inline;font-family:inherit!important;font-size:inherit;font-weight:700!important;margin:0}
+.kp-foot .kp-powered a{display:inline;margin:0}
+</style>
+<script>
+window._internal_onbeforeflowstart = function (options) {
+  return { ...options, featureFlags: {"RECORD":true,"OIDCJW":true,"TNTIMP":true,"RSUT":true} };
+}
+</script>
+<script>// Kumori theme helper for Boomi Flow: readable times, words instead of snake_case, status badges, less clutter.
+(function () {
+  var ISO = /\b(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})(\.\d+)?(Z|[+-]\d{2}:\d{2})\b/g;
+  function ago(d) {
+    var s = (Date.now() - d.getTime()) / 1000;
+    if (s < 90) return 'just now';
+    if (s < 5400) return Math.round(s / 60) + ' minutes ago';
+    if (s < 129600) return Math.round(s / 3600) + ' hours ago';
+    return Math.round(s / 86400) + ' days ago';
+  }
+  function full(d) { return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'medium' }); }
+  function words(s) { var t = s.replace(/_/g, ' '); return t.charAt(0).toUpperCase() + t.slice(1); }
+  function tidy() {
+    document.querySelectorAll('table').forEach(function (t) {
+      var heads = Array.prototype.map.call(t.querySelectorAll('th'), function (h) { return h.textContent.trim().toLowerCase(); });
+      t.querySelectorAll('tbody tr').forEach(function (tr) {
+        Array.prototype.forEach.call(tr.children, function (td, i) {
+          if (td.dataset.k) return;
+          var h = heads[i] || '', v = td.textContent.trim();
+          if (h === 'pipeline') { var m = /^(\d+)\s+(.*)$/.exec(v); if (m) td.innerHTML = '<span class="k-num">' + m[1] + '</span><span class="k-name"></span>', td.lastChild.textContent = m[2]; }
+          else if (h === 'type' && /_/.test(v)) td.textContent = words(v);
+          else if (h === 'status' && v) { var on = v.toLowerCase() === 'active'; td.innerHTML = '<span class="k-status' + (on ? ' on' : '') + '"><span aria-hidden="true">' + (on ? '&#9679;' : '&#9675;') + '</span> </span>'; td.firstChild.appendChild(document.createTextNode(words(v))); }
+          else if (h === 'last updated' && ISO.test(v)) { ISO.lastIndex = 0; var d = new Date(v); td.textContent = ago(d); td.title = full(d); }
+          ISO.lastIndex = 0; td.dataset.k = '1';
+        });
+      });
+    });
+    var walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n, hits = [];
+    while ((n = walk.nextNode())) {
+      if (n.parentElement && n.parentElement.closest('td,script,style')) continue;
+      if (/^\s*Selected Rows:/.test(n.nodeValue)) n.parentElement.classList.add('k-hide');
+      ISO.lastIndex = 0; if (ISO.test(n.nodeValue) || /\b[a-z]+_[a-z_]+\b/.test(n.nodeValue)) hits.push(n);
+    }
+    hits.forEach(function (t) {
+      t.nodeValue = t.nodeValue.replace(ISO, function (x) { return full(new Date(x)); }).replace(/\s*\(UTC\)/, '').replace(/\b(source_to_target|logic|action)\b/g, function (x) { return words(x); });
+    });
+    document.querySelectorAll('li > strong, li > b').forEach(function (k) {
+      var t = k.nextSibling;
+      if (/^status:?$/i.test(k.textContent.trim()) && t && t.nodeType === 3 && /^\s*[a-z]/.test(t.nodeValue)) t.nodeValue = ' ' + words(t.nodeValue.trim());
+    });
+    document.querySelectorAll('button').forEach(function (b) { if (b.textContent.trim() === 'Clear' && b.closest('.page-component-table')) b.classList.add('k-hide'); });
+  }
+  new MutationObserver(function () { clearTimeout(tidy.t); tidy.t = setTimeout(tidy, 40); }).observe(document.documentElement, { childList: true, subtree: true });
+  document.addEventListener('DOMContentLoaded', tidy);
+})();
+</script>
+<script id="flow-script" src="assets/flow.js" type="module" defer></script>
+</head>
+<body>
+<header class="kp-nav"><div class="kp-nav-in"><a class="kp-brand" href="https://kumori.ai/home" aria-label="Kumori home"><img src="https://kumori.ai/static/images/brand/wordmark-ink.svg" alt="Kumori" width="120" height="36" /></a><span class="kp-flow-chip"><span class="kp-flow-dot" aria-hidden="true"></span>Live demo, running in <a href="https://boomi.com/platform/flow/" target="_blank" rel="noopener">Boomi Flow</a></span><div class="kp-right"><a class="kp-home" href="https://kumori.ai/home">kumori.ai</a><a class="kp-cta" href="https://kumori.ai/whats-new/boomi-data-integration">How we built it</a></div></div></header>
+<p class="kp-crumb"><a href="https://kumori.ai/whats-new">Updates</a> &middot; <a href="https://kumori.ai/whats-new/boomi-data-integration">Boomi Data Integration</a> &middot; Live demo in <a href="https://boomi.com/platform/flow/" target="_blank" rel="noopener">Boomi Flow</a></p>
+<div id="flow-app"></div>
+<footer class="kp-foot"><div class="kp-foot-in">
+  <div><b>Built by Kumori, on Boomi</b>Boomi Data Integration moves the data, Boomi Integration runs the logic on our own Google Cloud runtime, and Boomi Flow puts this face on it.</div>
+  <div><b>Read more</b><a href="https://kumori.ai/whats-new/boomi-data-integration">How we built it</a><a href="https://github.com/kumori-ai/boomi-patterns" target="_blank" rel="noopener">The code on GitHub &#8599;</a><a href="https://kumori.ai/consulting">Work with us</a></div>
+  <div><b>Kumori</b><a href="https://kumori.ai/home">kumori.ai</a><a href="https://kumori.ai/products">Products</a><a href="https://kumori.ai/contact">Contact</a></div>
+</div><div class="kp-powered"><span class="kp-powered-mark" aria-hidden="true">&#9679;</span> <b>Powered by <a href="https://boomi.com/platform/flow/" target="_blank" rel="noopener">Boomi Flow</a>.</b> This page is a Boomi Flow app, running in a custom Kumori player: our own HTML and styles around Flow's runtime, all set up through Flow's API.</div></footer>
+</body>
+</html>

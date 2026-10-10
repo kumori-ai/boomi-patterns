@@ -1,0 +1,2813 @@
+{
+  "flowConfiguration": {
+    "authorization": {
+      "serviceElementId": null,
+      "globalAuthenticationType": "PUBLIC",
+      "streamBehaviourType": "NONE",
+      "showPagesAsReadOnly": false,
+      "users": null,
+      "groups": null,
+      "id": "840561d5-7650-4e29-926e-db2e2650f6d8",
+      "versionId": "00000000-0000-0000-0000-000000000000",
+      "parentId": "00000000-0000-0000-0000-000000000000",
+      "parentVersionId": "00000000-0000-0000-0000-000000000000"
+    },
+    "identityProvider": null,
+    "isDefault": true,
+    "isActive": true,
+    "allowJumping": false,
+    "enableHistoricalNavigation": false,
+    "stateExpirationLength": 0,
+    "idleStateExpirationLength": 30,
+    "stateLockedByUserModification": false,
+    "comment": null,
+    "sharing": 0,
+    "startMapElementId": {
+      "command": null,
+      "guid": "102fc5f9-7440-482a-affa-e71b8225dddc",
+      "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+      "relativeUnit": null
+    },
+    "mapElementIds": {
+      "102fc5f9-7440-482a-affa-e71b8225dddc": {
+        "guid": "102fc5f9-7440-482a-affa-e71b8225dddc",
+        "versionId": "0710e3eb-2f02-4d8a-a546-31b33a0c462d",
+        "elementType": "START",
+        "developerName": "Start",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "34ff5b91-9ee7-42e9-89a7-696f84a56855": {
+        "guid": "34ff5b91-9ee7-42e9-89a7-696f84a56855",
+        "versionId": "4738a99c-344d-48f5-b622-349c21576dd3",
+        "elementType": "input",
+        "developerName": "One pipeline",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "50a7ac6f-a78b-4617-b36b-4780c0711994": {
+        "guid": "50a7ac6f-a78b-4617-b36b-4780c0711994",
+        "versionId": "5a0d877f-3712-4882-9dcc-4850a8fe939e",
+        "elementType": "operator",
+        "developerName": "Stamp the time",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "57eddcd2-4458-40d8-a143-547d43749396": {
+        "guid": "57eddcd2-4458-40d8-a143-547d43749396",
+        "versionId": "3a6fdbe4-fad4-43b3-9b9d-bbbcd07722dd",
+        "elementType": "input",
+        "developerName": "What you're looking at",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "740bb2ec-c50e-4494-b42b-691c4903650c": {
+        "guid": "740bb2ec-c50e-4494-b42b-691c4903650c",
+        "versionId": "0780c64b-884e-4f8e-9ad8-4bb681e0ef72",
+        "elementType": "database_load",
+        "developerName": "Ask BDI for its pipelines",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "7c503742-f4b2-43d5-85dc-f246d3a55549": {
+        "guid": "7c503742-f4b2-43d5-85dc-f246d3a55549",
+        "versionId": "ba757019-91dd-43c9-bdae-eb987674f641",
+        "elementType": "input",
+        "developerName": "Pipelines",
+        "contentType": null,
+        "isVersionless": false
+      }
+    },
+    "flowIds": {},
+    "groupElementIds": {},
+    "pageElementIds": {
+      "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1": {
+        "guid": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
+        "versionId": "6142136b-e131-44b0-b8f0-fea8cdd9b238",
+        "elementType": "PAGE_LAYOUT",
+        "developerName": "BDI pipeline page",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "b285f049-9a2f-4638-93c7-3b58bb96ce84": {
+        "guid": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
+        "versionId": "69b40c63-eebc-45d7-a176-8578706b91e8",
+        "elementType": "PAGE_LAYOUT",
+        "developerName": "BDI pipelines page",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2": {
+        "guid": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
+        "versionId": "cd699bf7-f4a4-4924-afdc-19586ab5c3f4",
+        "elementType": "PAGE_LAYOUT",
+        "developerName": "Intro page",
+        "contentType": null,
+        "isVersionless": false
+      }
+    },
+    "valueElementIds": {
+      "2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2": {
+        "guid": "2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2",
+        "versionId": "98b6fdb7-c74f-4fba-9d8c-9a2246bf1fab",
+        "elementType": "VARIABLE",
+        "developerName": "Selected pipeline",
+        "contentType": "ContentObject",
+        "isVersionless": false
+      },
+      "600dc255-26d2-4bc0-89ef-4b185b347945": {
+        "guid": "600dc255-26d2-4bc0-89ef-4b185b347945",
+        "versionId": "b0beeb5d-eadb-4276-85be-a3d033af980a",
+        "elementType": "VARIABLE",
+        "developerName": "Fetched at",
+        "contentType": "ContentDateTime",
+        "isVersionless": false
+      },
+      "7ed30817-7507-4d8c-8ff7-e35215773263": {
+        "guid": "7ed30817-7507-4d8c-8ff7-e35215773263",
+        "versionId": "92107ae3-d785-4df0-bd29-ba81fed89b3a",
+        "elementType": "VARIABLE",
+        "developerName": "Kumori BDI Listener: OpenAPI schema",
+        "contentType": "ContentCode",
+        "isVersionless": false
+      },
+      "e86faeb6-2d6d-4406-8491-5cc1c1db4a0b": {
+        "guid": "e86faeb6-2d6d-4406-8491-5cc1c1db4a0b",
+        "versionId": "f99b9b72-d7a0-4489-b58f-c0e4f4e3c9bd",
+        "elementType": "VARIABLE",
+        "developerName": "BDI pipelines",
+        "contentType": "ContentList",
+        "isVersionless": false
+      },
+      "f40be37f-8449-4484-bf00-17c31d5417a0": {
+        "guid": "f40be37f-8449-4484-bf00-17c31d5417a0",
+        "versionId": "f16a60ae-f5c8-428c-adee-a0fb6f32d1ea",
+        "elementType": "VARIABLE",
+        "developerName": "Kumori BDI Listener: API key",
+        "contentType": "ContentPassword",
+        "isVersionless": false
+      }
+    },
+    "macroElementIds": {},
+    "serviceElementIds": {
+      "96366f1b-8611-4bdf-93c6-956fc9555816": {
+        "guid": "96366f1b-8611-4bdf-93c6-956fc9555816",
+        "versionId": "171c102f-d66e-4334-86aa-221f0dc65581",
+        "elementType": "SERVICE",
+        "developerName": "Kumori BDI Listener",
+        "contentType": null,
+        "isVersionless": false
+      }
+    },
+    "contentValueIds": {},
+    "typeElementIds": {
+      "b0562a81-7175-4781-a795-1c43106a1e44": {
+        "guid": "b0562a81-7175-4781-a795-1c43106a1e44",
+        "versionId": "07f6a1ac-2eb0-4701-9d58-9eb645b6f987",
+        "elementType": null,
+        "developerName": "BDI Flow List:items",
+        "contentType": null,
+        "isVersionless": false
+      }
+    },
+    "tagElementIds": {},
+    "navigationElementIds": {},
+    "identityProviderElementIds": {},
+    "customPageComponentElementIds": {},
+    "openApiIds": {
+      "048a8786-a7d3-4666-b01f-ec610c421bf6": {
+        "guid": "048a8786-a7d3-4666-b01f-ec610c421bf6",
+        "versionId": "83331960-ae0d-4c2b-8080-69548447de83",
+        "elementType": null,
+        "developerName": "Kumori BDI Listener",
+        "contentType": null,
+        "isVersionless": false
+      }
+    },
+    "tags": null,
+    "displayRootFaults": false,
+    "translationNotes": null,
+    "compositeId": {
+      "guid": "0438716c-4fa5-447c-9779-4a93924aa80b",
+      "versionId": "b1482e14-75e4-4a44-b9f9-69841dfede49",
+      "elementType": null,
+      "developerName": "Kumori BDI Monitor",
+      "contentType": null,
+      "isVersionless": false
+    },
+    "developerName": "Kumori BDI Monitor",
+    "developerSummary": "Kumori x Boomi: BDI data flow status via Boomi Integration (built via API, 2026-10-05)",
+    "dateCreated": "2026-10-05T21:48:09.9293083+00:00",
+    "dateModified": "2026-10-05T21:48:09.9293084+00:00",
+    "userCreated": "00000000-0000-0000-0000-000000000000",
+    "userModified": "00000000-0000-0000-0000-000000000000",
+    "userOwner": "00000000-0000-0000-0000-000000000000",
+    "userOwnerObject": {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "firstName": "Example",
+      "lastName": "Author",
+      "email": "author@example.com"
+    },
+    "userCreatedObject": {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "firstName": "Example",
+      "lastName": "Author",
+      "email": "author@example.com"
+    },
+    "userModifiedObject": {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "firstName": "Example",
+      "lastName": "Author",
+      "email": "author@example.com"
+    }
+  },
+  "flowConfigurations": [],
+  "contentValueCultures": [
+    {
+      "compositeId": {
+        "guid": "08ce8291-657f-4be0-a4f5-c8453a68457e"
+      },
+      "developerName": "United States of America",
+      "developerSummary": "Created by system",
+      "isDefault": true,
+      "brand": null,
+      "country": "USA",
+      "language": "EN",
+      "variant": null,
+      "defaultCultureCompositeId": null,
+      "dateCreated": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "contentValueDocuments": [
+    {
+      "elementId": "b0562a81-7175-4781-a795-1c43106a1e44",
+      "elementVersionId": "07f6a1ac-2eb0-4701-9d58-9eb645b6f987",
+      "elementType": "TYPE",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "1c7fb710-2eff-49cd-8b32-62a0c4eba35b": null,
+            "2fe37725-e3f8-4f1e-8f20-137c917ee207": null,
+            "3798b572-3e3f-4690-bb38-e27c240cfc42": null,
+            "553edba3-2704-48bc-b2bc-f769261c4aad": null,
+            "8d57d97c-127b-486f-aa24-9d989366076e": null,
+            "9aa4c436-4d74-4859-8c44-a0ceb0a3976d": null
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "0001-01-01T00:00:00+00:00",
+      "dateModified": "2026-10-05T18:38:47.7943542+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2",
+      "elementVersionId": "98b6fdb7-c74f-4fba-9d8c-9a2246bf1fab",
+      "elementType": "VARIABLE",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "d7a95b81-b036-4655-b035-5e51dd83d2e6": "",
+            "f4bde0b5-8da0-421d-9453-f1ae17c91677": null
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:57:40.0104053+00:00",
+      "dateModified": "2026-10-05T18:57:40.010403+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "600dc255-26d2-4bc0-89ef-4b185b347945",
+      "elementVersionId": "b0beeb5d-eadb-4276-85be-a3d033af980a",
+      "elementType": "VARIABLE",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "2f4544c3-84cc-404d-bf0e-fbe970c506a3": "",
+            "d4f1e66b-187d-42dc-a949-6e41820f3c10": null
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:57:40.9610274+00:00",
+      "dateModified": "2026-10-05T18:57:40.9610262+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "7ed30817-7507-4d8c-8ff7-e35215773263",
+      "elementVersionId": "92107ae3-d785-4df0-bd29-ba81fed89b3a",
+      "elementType": "VARIABLE",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "7b61ae64-2131-4aef-b975-8436c420b280": null,
+            "8c9bc31b-36d3-4776-92ef-d6e0a00c4044": "openapi: 3.0.3\ninfo:\n  title: Kumori BDI Monitor listener\n  version: \"1.0\"\n  description: Boomi Integration Web Services Server listener that lists Boomi Data Integration flows (read-only).\nservers:\n  - url: https://boomi.kumori.ai\nsecurity:\n  - listenerAuth: []\npaths:\n  /ws/simple/getListFlows:\n    get:\n      operationId: listFlows\n      security:\n        - listenerAuth: []\n      summary: List BDI flows\n      responses:\n        \"200\":\n          description: BDI Rivers API list, passed through by the Integration process\n          content:\n            application/json:\n              schema:\n                $ref: \"#/components/schemas/FlowList\"\ncomponents:\n  securitySchemes:\n    listenerAuth:\n      type: apiKey\n      in: header\n      name: Authorization\n      description: \"Basic <base64 user:token> for the runtime's shared web server user\"\n  schemas:\n    FlowList:\n      type: object\n      properties:\n        total_items:\n          type: integer\n        items:\n          type: array\n          items:\n            $ref: \"#/components/schemas/Flow\"\n    Flow:\n      type: object\n      properties:\n        river_cross_id:\n          type: string\n        name:\n          type: string\n        river_type:\n          type: string\n        river_status:\n          type: string\n        last_updated_at:\n          type: string\n        description:\n          type: string\n"
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:38:04.1789933+00:00",
+      "dateModified": "2026-10-05T18:38:04.1789909+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "e86faeb6-2d6d-4406-8491-5cc1c1db4a0b",
+      "elementVersionId": "f99b9b72-d7a0-4489-b58f-c0e4f4e3c9bd",
+      "elementType": "VARIABLE",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "89e6f195-8a00-49c6-869f-23a36b569fe8": null,
+            "df25af81-74c5-497e-8427-7b69a75ef405": ""
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:57:39.0538672+00:00",
+      "dateModified": "2026-10-05T18:57:39.0538657+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "f40be37f-8449-4484-bf00-17c31d5417a0",
+      "elementVersionId": "f16a60ae-f5c8-428c-adee-a0fb6f32d1ea",
+      "elementType": "VARIABLE",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "225cda16-98ef-4ff4-bf7f-190d9c626ce8": "<Basic base64(user:token) from KUMORI_BOOMI_INTEGRATION_LISTENER, set by tools>",
+            "663515df-927a-462c-8e52-d5a27ec13ca5": null
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:35:46.0626503+00:00",
+      "dateModified": "2026-10-05T18:35:46.0626478+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
+      "elementVersionId": "6142136b-e131-44b0-b8f0-fea8cdd9b238",
+      "elementType": "PAGE_LAYOUT",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "1b93946d-f96d-4d76-8a92-d00fb1790504": "",
+            "3f1d5ac8-f504-4ff1-a8e5-505857950bd9": "One pipeline",
+            "47a93457-20d1-423c-a99f-2b323666faa5": "<p><strong>How we built this:</strong> the full story, with a live button, is on <a href=\"https://kumori.ai/whats-new/boomi-data-integration\" target=\"_blank\" rel=\"noopener\">kumori.ai</a>, and the Integration processes, this Flow app and the checks are on <a href=\"https://github.com/kumori-ai/boomi-patterns\" target=\"_blank\" rel=\"noopener\">GitHub</a>.</p>",
+            "54318870-7182-4979-96d0-719ff621e7ab": null,
+            "753f6d84-3b57-4682-a287-b3decfbad469": null,
+            "9e611019-ff32-4ed3-9f43-1e091ac1318d": null,
+            "a5d12587-9742-40ed-a2a9-3fb81e98cc0f": "<h2>flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|b933e300-9edb-49e9-9f35-8259cf69fdaf___flowkey</h2><ul><li><strong>Type:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|952cf1d8-c3d6-4c01-9930-c28f78748ee5___flowkey</li><li><strong>Status:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|3715dfca-ac1f-45f9-89b3-a1485ba012e9___flowkey</li><li><strong>Last updated:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|48b4c761-be7e-4524-9baf-8b367d4a2f06___flowkey</li><li><strong>Pipeline id:</strong> flowkey___2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2|31993c96-5f6f-4984-ae72-6893accb8af5___flowkey</li></ul><p>Read from Boomi Data Integration at flowkey___600dc255-26d2-4bc0-89ef-4b185b347945|00000000-0000-0000-0000-000000000000___flowkey (UTC). <em>Check again</em> asks BDI afresh.</p>",
+            "a80dcc37-c3df-42d9-b5f1-06d634dfeed4": null,
+            "a883ba6d-5340-4001-880f-800a457d8030": "",
+            "aea128e6-538d-4284-8917-6d5466346f44": null,
+            "d5c15bc8-3bbc-4e71-9c7a-100783d4062e": null,
+            "dd08952c-dd6c-4276-8431-837aefc7249e": null
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T20:13:51.9846907+00:00",
+      "dateModified": "2026-10-05T20:13:51.9846889+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
+      "elementVersionId": "69b40c63-eebc-45d7-a176-8578706b91e8",
+      "elementType": "PAGE_LAYOUT",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "0527b23c-58fc-4c9b-bbb7-4a7c677be5b5": null,
+            "0d3f8d6c-047c-468d-9cfa-6141d15e455e": null,
+            "12985952-d8fa-4a76-b7d3-8f03ca881a94": "<p><strong>Fetched live</strong> at flowkey___600dc255-26d2-4bc0-89ef-4b185b347945|00000000-0000-0000-0000-000000000000___flowkey (UTC), through Flow, Cloudflare, our Boomi Integration runtime and the Boomi Data Integration API. Press <em>Ask again</em> and watch the time change.</p>",
+            "3989f224-d08d-448e-a548-8050d604b440": null,
+            "40fb59ee-5a63-437f-b3ac-719b319e3b50": null,
+            "4146fcdc-694a-4bab-a9f0-51ab35b6b6da": "",
+            "459d1c37-bd5c-46fe-99de-07d1def124c3": null,
+            "5094804e-3d3a-4858-9420-49e5fbc564af": "Last updated",
+            "5095b3b2-0305-47f0-b055-1e6a9f9c5b67": null,
+            "50def603-60f4-4142-8cb8-533c8c666cb7": "",
+            "58076234-064a-4eb3-8a0c-df0ea89a5bd1": "Pipeline",
+            "5e86c592-4967-4f8f-9e71-bbb6c8ec508b": "Status",
+            "5f0cae80-ffbc-4a5d-bda1-5f42caf72956": null,
+            "747e5abb-a678-416d-bbc7-861f9d016505": null,
+            "95ad61f2-38d8-47bc-a110-e3c4c84daf67": null,
+            "9dc16899-04ac-4f1c-ad26-0af51e32affa": "Pipelines in Boomi Data Integration",
+            "a2c989cc-96b8-4edc-852d-2dfcef471403": "Type",
+            "b12cfdd0-1c08-4c29-805a-3e5a885857e4": "<p><strong>How we built this:</strong> the full story, with a live button, is on <a href=\"https://kumori.ai/whats-new/boomi-data-integration\" target=\"_blank\" rel=\"noopener\">kumori.ai</a>, and the Integration processes, this Flow app and the checks are on <a href=\"https://github.com/kumori-ai/boomi-patterns\" target=\"_blank\" rel=\"noopener\">GitHub</a>.</p>",
+            "c85716f8-71e8-45fe-af4c-400ca30638bb": "",
+            "ca44fdd5-4b1c-430a-bf2c-404e7e8b7f88": "",
+            "cffbeaad-6687-478f-b0b9-fc0638cc28e9": null,
+            "dd5b8136-10ff-442f-b62d-4fc5516ca6c1": "",
+            "e734de63-3c4b-42c7-ae6f-4e974e730495": null,
+            "eee9b78a-4dcc-4aee-b9e0-9392961d3402": null,
+            "f02b5104-67ea-4730-98da-de7a87150f12": "Data pipelines",
+            "f539fe5f-789a-4d54-895e-afccb5f12235": "<div class=\"k-details\"><h3>Under the hood: what one press calls</h3><ol><li><strong>Boomi Flow:</strong> a Database Load step reads the type <code>BDI Flow List:items</code> through Flow's OpenAPI connector, <em>Kumori BDI Listener</em>, which sends <code>GET https://boomi.kumori.ai/ws/simple/getListFlows</code> with a signed-in login.</li><li><strong>Cloudflare and our gateway:</strong> Cloudflare passes the call to our Google Cloud VM, where the gateway forwards only Boomi listener paths to the runtime.</li><li><strong>Boomi Integration:</strong> the Web Services Server listener <em>[WSS] BDI List Pipelines</em> starts the process <em>[LISTENER] BDI List Pipelines</em>, which calls the subprocess <em>[SUB] BDI List Pipelines</em>.</li><li><strong>Boomi Integration to Data Integration:</strong> the subprocess's REST step, <em>BDI Rivers API: List Pipelines</em>, calls <code>GET https://api.rivery.io/v1/accounts/{account}/environments/{environment}/rivers</code> with a token held in an environment extension, never in a component.</li><li><strong>Boomi Data Integration</strong> answers with the pipeline list; it travels back the same way into the table, and an operator step stamps the time.</li></ol><h3>The Boomi runtime, built the way we build for clients</h3><p>The Boomi Integration runtime behind this app is ours, on Google Cloud, set up the way we recommend to customers:</p><ul><li><strong>Hardened host:</strong> Boomi's official runtime container on Google's Container-Optimized OS, with its data on a managed Docker volume.</li><li><strong>Nothing open to the internet but the front door:</strong> the cloud firewall admits only Cloudflare's network, and the server answers only the Boomi listener paths; every other path returns not-found.</li><li><strong>Encrypted all the way:</strong> TLS from your browser to Cloudflare and again from Cloudflare to the server, with Cloudflare's origin certificate.</li><li><strong>Every call signs in:</strong> the listener requires a login, and admin access to the machine is through Google's Identity-Aware Proxy only, never an open SSH port.</li><li><strong>No secrets in code:</strong> every token lives in Google Secret Manager, each readable only by the one service that needs it, and rotated by script.</li></ul></div>"
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T21:28:09.5075863+00:00",
+      "dateModified": "2026-10-05T21:28:09.5075849+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
+      "elementVersionId": "cd699bf7-f4a4-4924-afdc-19586ab5c3f4",
+      "elementType": "PAGE_LAYOUT",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "0a06c27b-11dc-4290-95a6-f3e25bb0b540": null,
+            "0e510e39-cb6d-4b17-aaf2-3ac5b05a39d6": null,
+            "3e6b5189-36a7-4204-ac7a-6a124495c16b": null,
+            "543479be-50e6-4503-8742-c4db109fb908": "<div class=\"k-hero\"><p class=\"k-kicker\"><span class=\"k-dot\"></span>Live demo &middot; built in Boomi Flow</p><h1>Ask Boomi for our pipelines, right now</h1><p class=\"k-lede\">Kumori runs all three parts of Boomi's platform together: Boomi Data Integration moves our data, Boomi Integration runs the logic on our own Google Cloud runtime, and this app, built in Boomi Flow, puts a face on it. One press sends a real request through five hops and back, usually in about a second.</p><ol class=\"k-hops\"><li><span class=\"k-hop-n\">1</span><b>Boomi Flow</b><span>This app asks our API</span></li><li><span class=\"k-hop-n\">2</span><b>Cloudflare</b><span>Checks the request and forwards it to Google Cloud</span></li><li><span class=\"k-hop-n\">3</span><b>Boomi Integration runtime</b><span>Our own runtime checks the login</span></li><li><span class=\"k-hop-n\">4</span><b>Integration process</b><span>Calls the Boomi Data Integration API</span></li><li><span class=\"k-hop-n\">5</span><b>Boomi Data Integration</b><span>Answers with our pipelines</span></li></ol><p class=\"k-safe\">This page is a light shim over the live chain. The full version, with every detail, screenshots and results, is <a href=\"https://kumori.ai/whats-new/boomi-data-integration\" target=\"_blank\" rel=\"noopener\">kumori.ai/whats-new/boomi-data-integration</a>. Read-only: nothing runs and no credits are spent.</p></div>",
+            "5a74891f-0844-488e-af5f-7ad473e2027b": null,
+            "5e3ed9f5-f75d-4923-bf6b-e10839e82633": "Kumori BDI Monitor",
+            "8d321e0e-de7f-4056-9fb7-0ff376c4e2b3": "",
+            "b3ea0735-97e1-4335-a76b-3567cd44e4cc": "",
+            "bb9c0996-defd-4dfe-be3b-bdbc11099d76": "",
+            "bf398a55-b9b8-4c9c-af02-bdc21c5dc664": null,
+            "c2cabc8a-de59-4e90-ac12-19d79f4c6c84": null,
+            "eb445698-2ef5-45a7-91b3-590b8694e57f": null
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T21:48:08.9577614+00:00",
+      "dateModified": "2026-10-05T21:48:08.9577591+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "102fc5f9-7440-482a-affa-e71b8225dddc",
+      "elementVersionId": "0710e3eb-2f02-4d8a-a546-31b33a0c462d",
+      "elementType": "START",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "26b479ef-5be6-4a85-84ed-6ec69260837f": "Start",
+            "305b1e8d-ba4d-4093-a5a8-bc4e134631a6": "",
+            "48af0779-45f2-40c4-b096-c74a98d92d88": "Open",
+            "d77abec7-1a83-4db2-88f8-108882023c61": "",
+            "e4c65053-29c1-44ae-9c43-140b00c3657e": "",
+            "fcee4c7a-e0db-4f4f-b533-b6af6f7ea891": ""
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T17:26:39.8433145+00:00",
+      "dateModified": "2026-10-05T17:26:39.8432547+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "34ff5b91-9ee7-42e9-89a7-696f84a56855",
+      "elementVersionId": "4738a99c-344d-48f5-b622-349c21576dd3",
+      "elementType": "input",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "00603420-fbf8-4d00-a567-077a9df746f7": "Check again",
+            "1a937852-3044-4361-afe5-08d86b000b9f": "",
+            "62fdbc3b-d3bd-4c43-b37b-c2c8a5f892af": "One pipeline",
+            "7fd2f91a-efaa-452e-bb18-ab80fc6be69a": "Back to all pipelines",
+            "8940abcc-0d42-4297-8742-45a63f83d5a6": "",
+            "f3d7b538-f476-4aa4-a8a6-17eaa3e6e65f": "",
+            "f4b37b6c-c6fe-466e-b3b1-b55c8a53e6d2": ""
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:59:15.1252318+00:00",
+      "dateModified": "2026-10-05T18:59:15.1252303+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "50a7ac6f-a78b-4617-b36b-4780c0711994",
+      "elementVersionId": "5a0d877f-3712-4882-9dcc-4850a8fe939e",
+      "elementType": "operator",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "00d80813-8016-4718-9791-2f96daf23c76": "",
+            "60b9ff1e-d9ff-4230-afdf-882e3c7dc483": "",
+            "71956253-342e-4834-9c4a-1acd6e5edd6a": "",
+            "7c37abf6-94c8-49cd-ab8e-e78bacf206d9": "",
+            "95dbb666-4f56-4426-853a-8136782d1db9": "Stamped",
+            "e3862743-a806-438c-900b-f5196ef9956e": "Stamp the time"
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:59:13.0538458+00:00",
+      "dateModified": "2026-10-05T18:59:13.0538433+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "57eddcd2-4458-40d8-a143-547d43749396",
+      "elementVersionId": "3a6fdbe4-fad4-43b3-9b9d-bbbcd07722dd",
+      "elementType": "input",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "1aa0edc8-b340-4394-bd2c-0171e312970e": "",
+            "78834aff-d440-4852-b70d-1f1c98d13da6": "Ask BDI for its pipelines",
+            "9510ccdb-f815-47f6-a7e8-ec0bd23a2d51": "",
+            "e2d1b0e4-c79a-45e3-9400-97544ddda4c0": "",
+            "f42b4882-d4a5-4c7b-b93c-926cd893002c": "What you're looking at",
+            "fcc678ee-3b1e-4d76-b9cd-6973a6a7ad8e": ""
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T21:39:50.133963+00:00",
+      "dateModified": "2026-10-05T21:39:50.1339614+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "740bb2ec-c50e-4494-b42b-691c4903650c",
+      "elementVersionId": "0780c64b-884e-4f8e-9ad8-4bb681e0ef72",
+      "elementType": "database_load",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "3a30035f-d750-4a1b-99e3-18a09495a8e2": "Loaded",
+            "3ebbf97a-9f6c-4ae1-8708-fbe04f0d518c": "",
+            "4f87cc92-d796-4e88-8f3f-dca7f643118b": "",
+            "9642e220-7d4c-49d8-ac90-98393ba83d92": "",
+            "cdf9ab2e-e8a0-4b42-9ece-1fdfa1a1e492": "Ask BDI for its pipelines",
+            "faf46ed8-faa7-434f-8e7b-699446444307": ""
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:59:12.0640356+00:00",
+      "dateModified": "2026-10-05T18:59:12.0640342+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    },
+    {
+      "elementId": "7c503742-f4b2-43d5-85dc-f246d3a55549",
+      "elementVersionId": "ba757019-91dd-43c9-bdae-eb987674f641",
+      "elementType": "input",
+      "contentValueDocumentTranslations": {
+        "08ce8291-657f-4be0-a4f5-c8453a68457e": {
+          "contentValues": {
+            "0c57c137-f2a7-4736-9967-e3fcd51dd3c5": "Start over",
+            "13fa7d4b-1cd2-490b-9643-c45cdba6392c": "",
+            "1c6f7def-cc8d-4b2e-bb52-cbc386c48050": "Pipelines",
+            "4621c14d-ee50-4b84-bbeb-7add7ae2abda": "Open",
+            "7b3056c6-9c79-4625-8678-c63ea010aca9": "",
+            "7f74dc06-654d-4229-8590-e9376dbc2a72": "",
+            "d22c78ea-f4f2-4925-a21d-3290545bd143": "",
+            "d9be8ae7-51b7-42c8-a087-07cd31e7dd82": "Ask again"
+          },
+          "contentValuesState": null
+        }
+      },
+      "dateCreated": "2026-10-05T18:59:14.0583196+00:00",
+      "dateModified": "2026-10-05T18:59:14.0583179+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "navigationElementConfigurations": [],
+  "mapElementConfigurations": [
+    {
+      "groupElementId": null,
+      "isOpen": false,
+      "x": 60,
+      "y": 240,
+      "pageElementId": null,
+      "operations": null,
+      "outcomes": [
+        {
+          "guid": "b1db84d8-2372-4760-8455-7b3fac699331",
+          "developerName": "Open",
+          "labelContentValueId": {
+            "guid": "48af0779-45f2-40c4-b096-c74a98d92d88"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "57eddcd2-4458-40d8-a143-547d43749396",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": null,
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 0,
+          "id": "b1db84d8-2372-4760-8455-7b3fac699331",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "attachments": [],
+      "viewMessageAction": null,
+      "listeners": null,
+      "processes": null,
+      "approval": null,
+      "messageActions": null,
+      "dataActions": null,
+      "clearNavigationOverrides": false,
+      "navigationOverrides": null,
+      "statusMessageContentValueId": {
+        "guid": "fcee4c7a-e0db-4f4f-b533-b6af6f7ea891"
+      },
+      "notAuthorizedContentValueId": {
+        "guid": "e4c65053-29c1-44ae-9c43-140b00c3657e"
+      },
+      "postUpdateMessageContentValueId": {
+        "guid": "d77abec7-1a83-4db2-88f8-108882023c61"
+      },
+      "labelContentValueId": {
+        "guid": "26b479ef-5be6-4a85-84ed-6ec69260837f"
+      },
+      "postUpdateToStream": false,
+      "postUpdateWhenType": null,
+      "userContentContentValueId": {
+        "guid": "305b1e8d-ba4d-4093-a5a8-bc4e134631a6"
+      },
+      "userContentDateModified": null,
+      "vote": null,
+      "subflow": null,
+      "pageElementDeveloperName": null,
+      "wait": null,
+      "waits": [],
+      "openApiActions": [],
+      "pageType": 0,
+      "title": null,
+      "agent": null,
+      "compositeId": {
+        "guid": "102fc5f9-7440-482a-affa-e71b8225dddc",
+        "versionId": "0710e3eb-2f02-4d8a-a546-31b33a0c462d",
+        "elementType": "START",
+        "developerName": "Start",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Start",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T17:25:35.59808+00:00",
+      "dateModified": "2026-10-05T17:27:01.044561+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "groupElementId": null,
+      "isOpen": false,
+      "x": 1020,
+      "y": 260,
+      "pageElementId": {
+        "command": null,
+        "guid": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
+        "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+        "relativeUnit": null
+      },
+      "operations": null,
+      "outcomes": [
+        {
+          "guid": "39cc37b1-7f25-4a40-8a59-7ab1e7ca6655",
+          "developerName": "Back",
+          "labelContentValueId": {
+            "guid": "7fd2f91a-efaa-452e-bb18-ab80fc6be69a"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "7c503742-f4b2-43d5-85dc-f246d3a55549",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": null,
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 0,
+          "id": "39cc37b1-7f25-4a40-8a59-7ab1e7ca6655",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "5e8ba3a6-480c-49b0-9da3-f26ec1745e8f",
+          "developerName": "Again",
+          "labelContentValueId": {
+            "guid": "00603420-fbf8-4d00-a567-077a9df746f7"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "740bb2ec-c50e-4494-b42b-691c4903650c",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": "SUBMIT",
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 1,
+          "id": "5e8ba3a6-480c-49b0-9da3-f26ec1745e8f",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "attachments": [],
+      "viewMessageAction": null,
+      "listeners": null,
+      "processes": null,
+      "approval": null,
+      "messageActions": null,
+      "dataActions": null,
+      "clearNavigationOverrides": false,
+      "navigationOverrides": null,
+      "statusMessageContentValueId": {
+        "guid": "8940abcc-0d42-4297-8742-45a63f83d5a6"
+      },
+      "notAuthorizedContentValueId": {
+        "guid": "f3d7b538-f476-4aa4-a8a6-17eaa3e6e65f"
+      },
+      "postUpdateMessageContentValueId": {
+        "guid": "f4b37b6c-c6fe-466e-b3b1-b55c8a53e6d2"
+      },
+      "labelContentValueId": {
+        "guid": "62fdbc3b-d3bd-4c43-b37b-c2c8a5f892af"
+      },
+      "postUpdateToStream": false,
+      "postUpdateWhenType": null,
+      "userContentContentValueId": {
+        "guid": "1a937852-3044-4361-afe5-08d86b000b9f"
+      },
+      "userContentDateModified": null,
+      "vote": null,
+      "subflow": null,
+      "pageElementDeveloperName": "BDI pipeline page",
+      "wait": null,
+      "waits": [],
+      "openApiActions": [],
+      "pageType": 0,
+      "title": null,
+      "agent": null,
+      "compositeId": {
+        "guid": "34ff5b91-9ee7-42e9-89a7-696f84a56855",
+        "versionId": "4738a99c-344d-48f5-b622-349c21576dd3",
+        "elementType": "input",
+        "developerName": "One pipeline",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "One pipeline",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:59:08.685131+00:00",
+      "dateModified": "2026-10-05T19:01:29.689117+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "groupElementId": null,
+      "isOpen": false,
+      "x": 540,
+      "y": 260,
+      "pageElementId": null,
+      "operations": [
+        {
+          "valueElementToApplyId": {
+            "command": null,
+            "guid": "600dc255-26d2-4bc0-89ef-4b185b347945",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "valueElementToReferenceId": {
+            "command": null,
+            "guid": "1f2a56fd-e14b-460c-aabd-9fbf344b84f3",
+            "typeElementPropertyId": "23f6b3ca-e136-4908-8028-ac6f975441fa",
+            "relativeUnit": null
+          },
+          "valueElementToReferenceRelativeId": null,
+          "macroElementToExecuteId": null,
+          "typeElementId": null,
+          "order": 0,
+          "sortBy": null,
+          "sortById": null,
+          "sortByDeveloperName": null,
+          "sortDirection": null,
+          "disabled": false,
+          "id": "dd0d4ce0-a5f0-48b6-8043-be1ca62fd20a",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "outcomes": [
+        {
+          "guid": "c6e70315-e9e1-47cb-9925-7ffe872f86da",
+          "developerName": "Stamped",
+          "labelContentValueId": {
+            "guid": "95dbb666-4f56-4426-853a-8136782d1db9"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "7c503742-f4b2-43d5-85dc-f246d3a55549",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": null,
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 0,
+          "id": "c6e70315-e9e1-47cb-9925-7ffe872f86da",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "attachments": [],
+      "viewMessageAction": null,
+      "listeners": null,
+      "processes": null,
+      "approval": null,
+      "messageActions": null,
+      "dataActions": null,
+      "clearNavigationOverrides": false,
+      "navigationOverrides": null,
+      "statusMessageContentValueId": {
+        "guid": "00d80813-8016-4718-9791-2f96daf23c76"
+      },
+      "notAuthorizedContentValueId": {
+        "guid": "60b9ff1e-d9ff-4230-afdf-882e3c7dc483"
+      },
+      "postUpdateMessageContentValueId": {
+        "guid": "7c37abf6-94c8-49cd-ab8e-e78bacf206d9"
+      },
+      "labelContentValueId": {
+        "guid": "e3862743-a806-438c-900b-f5196ef9956e"
+      },
+      "postUpdateToStream": false,
+      "postUpdateWhenType": null,
+      "userContentContentValueId": {
+        "guid": "71956253-342e-4834-9c4a-1acd6e5edd6a"
+      },
+      "userContentDateModified": null,
+      "vote": null,
+      "subflow": null,
+      "pageElementDeveloperName": null,
+      "wait": null,
+      "waits": [],
+      "openApiActions": [],
+      "pageType": 0,
+      "title": null,
+      "agent": null,
+      "compositeId": {
+        "guid": "50a7ac6f-a78b-4617-b36b-4780c0711994",
+        "versionId": "5a0d877f-3712-4882-9dcc-4850a8fe939e",
+        "elementType": "operator",
+        "developerName": "Stamp the time",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Stamp the time",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:59:06.44599+00:00",
+      "dateModified": "2026-10-05T19:01:29.689117+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "groupElementId": null,
+      "isOpen": false,
+      "x": 300,
+      "y": 100,
+      "pageElementId": {
+        "command": null,
+        "guid": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
+        "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+        "relativeUnit": null
+      },
+      "operations": null,
+      "outcomes": [
+        {
+          "guid": "b4354cc3-8b66-439c-9fbe-e1da638e38c2",
+          "developerName": "Ask",
+          "labelContentValueId": {
+            "guid": "78834aff-d440-4852-b70d-1f1c98d13da6"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "740bb2ec-c50e-4494-b42b-691c4903650c",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": "SUBMIT",
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "e2793d97-1ddc-4858-9616-e0bc8531631a",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": {
+            "size": "lg"
+          },
+          "className": null,
+          "order": 0,
+          "id": "b4354cc3-8b66-439c-9fbe-e1da638e38c2",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "attachments": [],
+      "viewMessageAction": null,
+      "listeners": null,
+      "processes": null,
+      "approval": null,
+      "messageActions": null,
+      "dataActions": null,
+      "clearNavigationOverrides": false,
+      "navigationOverrides": null,
+      "statusMessageContentValueId": {
+        "guid": "9510ccdb-f815-47f6-a7e8-ec0bd23a2d51"
+      },
+      "notAuthorizedContentValueId": {
+        "guid": "1aa0edc8-b340-4394-bd2c-0171e312970e"
+      },
+      "postUpdateMessageContentValueId": {
+        "guid": "e2d1b0e4-c79a-45e3-9400-97544ddda4c0"
+      },
+      "labelContentValueId": {
+        "guid": "f42b4882-d4a5-4c7b-b93c-926cd893002c"
+      },
+      "postUpdateToStream": false,
+      "postUpdateWhenType": null,
+      "userContentContentValueId": {
+        "guid": "fcc678ee-3b1e-4d76-b9cd-6973a6a7ad8e"
+      },
+      "userContentDateModified": null,
+      "vote": null,
+      "subflow": null,
+      "pageElementDeveloperName": "Intro page",
+      "wait": null,
+      "waits": [],
+      "openApiActions": [],
+      "pageType": 0,
+      "title": null,
+      "agent": null,
+      "compositeId": {
+        "guid": "57eddcd2-4458-40d8-a143-547d43749396",
+        "versionId": "3a6fdbe4-fad4-43b3-9b9d-bbbcd07722dd",
+        "elementType": "input",
+        "developerName": "What you're looking at",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "What you're looking at",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T17:26:27.84585+00:00",
+      "dateModified": "2026-10-05T21:39:51.196109+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "groupElementId": null,
+      "isOpen": false,
+      "x": 300,
+      "y": 260,
+      "pageElementId": null,
+      "operations": null,
+      "outcomes": [
+        {
+          "guid": "94c03cc5-4bdb-487e-afa1-576bd66d9fcc",
+          "developerName": "Loaded",
+          "labelContentValueId": {
+            "guid": "3a30035f-d750-4a1b-99e3-18a09495a8e2"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "50a7ac6f-a78b-4617-b36b-4780c0711994",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": null,
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 0,
+          "id": "94c03cc5-4bdb-487e-afa1-576bd66d9fcc",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "attachments": [],
+      "viewMessageAction": null,
+      "listeners": null,
+      "processes": null,
+      "approval": null,
+      "messageActions": null,
+      "dataActions": [
+        {
+          "developerName": "Load pipelines",
+          "crudOperationType": "LOAD",
+          "valueElementToReferenceId": null,
+          "valueElementToApplyId": {
+            "command": null,
+            "guid": "e86faeb6-2d6d-4406-8491-5cc1c1db4a0b",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "objectDataRequest": {
+            "typeElementBindingId": "d72a94c7-3782-4457-ad84-cb2278304f3e",
+            "typeElementId": {
+              "command": null,
+              "guid": "b0562a81-7175-4781-a795-1c43106a1e44",
+              "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "relativeUnit": null
+            },
+            "listFilter": {
+              "filterId": null,
+              "orderByTypeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "orderByDirectionType": null,
+              "orderBy": null,
+              "limit": 50,
+              "filterByProvidedObjects": false,
+              "searchCriteria": null,
+              "properties": null,
+              "comparisonType": "AND",
+              "where": null,
+              "listFilters": null,
+              "id": "189a8149-f171-42e7-bca9-0eb85387b353",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            "command": null,
+            "serviceElementId": {
+              "command": null,
+              "guid": "96366f1b-8611-4bdf-93c6-956fc9555816",
+              "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "relativeUnit": null
+            },
+            "id": "899b453e-66b2-4038-a2d5-5fc9741311e7",
+            "versionId": "00000000-0000-0000-0000-000000000000",
+            "parentId": "00000000-0000-0000-0000-000000000000",
+            "parentVersionId": "00000000-0000-0000-0000-000000000000"
+          },
+          "isSmartSave": false,
+          "order": 0,
+          "disabled": false,
+          "id": "a75002b3-48cc-4590-9dbb-7de7c83b6133",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "clearNavigationOverrides": false,
+      "navigationOverrides": null,
+      "statusMessageContentValueId": {
+        "guid": "4f87cc92-d796-4e88-8f3f-dca7f643118b"
+      },
+      "notAuthorizedContentValueId": {
+        "guid": "3ebbf97a-9f6c-4ae1-8708-fbe04f0d518c"
+      },
+      "postUpdateMessageContentValueId": {
+        "guid": "faf46ed8-faa7-434f-8e7b-699446444307"
+      },
+      "labelContentValueId": {
+        "guid": "cdf9ab2e-e8a0-4b42-9ece-1fdfa1a1e492"
+      },
+      "postUpdateToStream": false,
+      "postUpdateWhenType": null,
+      "userContentContentValueId": {
+        "guid": "9642e220-7d4c-49d8-ac90-98393ba83d92"
+      },
+      "userContentDateModified": null,
+      "vote": null,
+      "subflow": null,
+      "pageElementDeveloperName": null,
+      "wait": null,
+      "waits": [],
+      "openApiActions": [],
+      "pageType": 0,
+      "title": null,
+      "agent": null,
+      "compositeId": {
+        "guid": "740bb2ec-c50e-4494-b42b-691c4903650c",
+        "versionId": "0780c64b-884e-4f8e-9ad8-4bb681e0ef72",
+        "elementType": "database_load",
+        "developerName": "Ask BDI for its pipelines",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Ask BDI for its pipelines",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:59:05.428775+00:00",
+      "dateModified": "2026-10-05T19:01:29.689117+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "groupElementId": null,
+      "isOpen": false,
+      "x": 780,
+      "y": 260,
+      "pageElementId": {
+        "command": null,
+        "guid": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
+        "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+        "relativeUnit": null
+      },
+      "operations": null,
+      "outcomes": [
+        {
+          "guid": "4e73821b-22c0-42c8-9719-2ad0b5606a68",
+          "developerName": "Open",
+          "labelContentValueId": {
+            "guid": "4621c14d-ee50-4b84-bbeb-7add7ae2abda"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "34ff5b91-9ee7-42e9-89a7-696f84a56855",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": null,
+          "isBulkAction": false,
+          "pageActionBindingType": "SAVE",
+          "pageObjectBindingId": "1c7e440c-9fad-43a3-bdb4-5e4a2771f961",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 0,
+          "id": "4e73821b-22c0-42c8-9719-2ad0b5606a68",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "239c8408-9f97-4bae-a202-a86173ad00be",
+          "developerName": "Again",
+          "labelContentValueId": {
+            "guid": "d9be8ae7-51b7-42c8-a087-07cd31e7dd82"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "740bb2ec-c50e-4494-b42b-691c4903650c",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": "SUBMIT",
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 1,
+          "id": "239c8408-9f97-4bae-a202-a86173ad00be",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "cc44b6b6-95f5-4e58-a655-727b21d45979",
+          "developerName": "Start",
+          "labelContentValueId": {
+            "guid": "0c57c137-f2a7-4736-9967-e3fcd51dd3c5"
+          },
+          "comparisonType": null,
+          "newMapElementId": {
+            "command": null,
+            "guid": "57eddcd2-4458-40d8-a143-547d43749396",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "pageActionType": null,
+          "isBulkAction": false,
+          "pageActionBindingType": null,
+          "pageObjectBindingId": "00000000-0000-0000-0000-000000000000",
+          "flowOut": null,
+          "controlPoints": [],
+          "attributes": null,
+          "className": null,
+          "order": 2,
+          "id": "cc44b6b6-95f5-4e58-a655-727b21d45979",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "attachments": [],
+      "viewMessageAction": null,
+      "listeners": null,
+      "processes": null,
+      "approval": null,
+      "messageActions": null,
+      "dataActions": null,
+      "clearNavigationOverrides": false,
+      "navigationOverrides": null,
+      "statusMessageContentValueId": {
+        "guid": "7f74dc06-654d-4229-8590-e9376dbc2a72"
+      },
+      "notAuthorizedContentValueId": {
+        "guid": "d22c78ea-f4f2-4925-a21d-3290545bd143"
+      },
+      "postUpdateMessageContentValueId": {
+        "guid": "7b3056c6-9c79-4625-8678-c63ea010aca9"
+      },
+      "labelContentValueId": {
+        "guid": "1c6f7def-cc8d-4b2e-bb52-cbc386c48050"
+      },
+      "postUpdateToStream": false,
+      "postUpdateWhenType": null,
+      "userContentContentValueId": {
+        "guid": "13fa7d4b-1cd2-490b-9643-c45cdba6392c"
+      },
+      "userContentDateModified": null,
+      "vote": null,
+      "subflow": null,
+      "pageElementDeveloperName": "BDI pipelines page",
+      "wait": null,
+      "waits": [],
+      "openApiActions": [],
+      "pageType": 0,
+      "title": null,
+      "agent": null,
+      "compositeId": {
+        "guid": "7c503742-f4b2-43d5-85dc-f246d3a55549",
+        "versionId": "ba757019-91dd-43c9-bdae-eb987674f641",
+        "elementType": "input",
+        "developerName": "Pipelines",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Pipelines",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:59:07.489034+00:00",
+      "dateModified": "2026-10-05T19:01:29.689117+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    }
+  ],
+  "groupElementConfigurations": [],
+  "serviceElementConfigurations": [
+    {
+      "uri": "flow://openapi",
+      "format": "json",
+      "providesData": true,
+      "providesFiles": true,
+      "providesLogic": true,
+      "providesViews": false,
+      "providesIdentity": true,
+      "providesSocial": false,
+      "providesAutoBinding": false,
+      "sendDecryptedValues": false,
+      "httpAuthenticationUsername": null,
+      "httpAuthenticationPassword": null,
+      "clientCertificateValueReference": "",
+      "clientCertificatePasswordValueReference": "",
+      "version": "1",
+      "sharing": 0,
+      "actions": [],
+      "configurationValues": [
+        {
+          "developerName": "Schema Value",
+          "valueElementToReferenceId": {
+            "command": null,
+            "guid": "7ed30817-7507-4d8c-8ff7-e35215773263",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "typeElementId": null,
+          "contentType": "ContentCode",
+          "ordinal": 0,
+          "id": "ee1cc060-d9fc-42c1-b106-ac26136fae13",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "developerName": "API Key",
+          "valueElementToReferenceId": {
+            "command": null,
+            "guid": "f40be37f-8449-4484-bf00-17c31d5417a0",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "typeElementId": null,
+          "contentType": "ContentString",
+          "ordinal": 0,
+          "id": "bc5099ec-581e-40af-9a9f-673d44712389",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "identityProviderElementId": null,
+      "openApiId": {
+        "guid": "048a8786-a7d3-4666-b01f-ec610c421bf6",
+        "versionId": "00000000-0000-0000-0000-000000000000",
+        "elementType": null,
+        "developerName": null,
+        "contentType": null,
+        "isVersionless": false
+      },
+      "compositeId": {
+        "guid": "96366f1b-8611-4bdf-93c6-956fc9555816",
+        "versionId": "171c102f-d66e-4334-86aa-221f0dc65581",
+        "elementType": "SERVICE",
+        "developerName": "Kumori BDI Listener",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Kumori BDI Listener",
+      "developerSummary": "OpenAPI connector to the Boomi Integration WSS listener at boomi.kumori.ai (lists Boomi Data Integration flows, read-only).",
+      "dateCreated": "2026-10-05T18:36:34.512678+00:00",
+      "dateModified": "2026-10-05T18:44:32.549781+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    }
+  ],
+  "typeElementConfigurations": [
+    {
+      "externalId": "00000000-0000-0000-0000-000000000000",
+      "properties": [
+        {
+          "guid": "31993c96-5f6f-4984-ae72-6893accb8af5",
+          "developerName": "river_cross_id",
+          "contentType": "ContentString",
+          "contentFormatContentValueId": {
+            "guid": "2fe37725-e3f8-4f1e-8f20-137c917ee207"
+          },
+          "typeElementId": null
+        },
+        {
+          "guid": "b933e300-9edb-49e9-9f35-8259cf69fdaf",
+          "developerName": "name",
+          "contentType": "ContentString",
+          "contentFormatContentValueId": {
+            "guid": "553edba3-2704-48bc-b2bc-f769261c4aad"
+          },
+          "typeElementId": null
+        },
+        {
+          "guid": "952cf1d8-c3d6-4c01-9930-c28f78748ee5",
+          "developerName": "river_type",
+          "contentType": "ContentString",
+          "contentFormatContentValueId": {
+            "guid": "9aa4c436-4d74-4859-8c44-a0ceb0a3976d"
+          },
+          "typeElementId": null
+        },
+        {
+          "guid": "3715dfca-ac1f-45f9-89b3-a1485ba012e9",
+          "developerName": "river_status",
+          "contentType": "ContentString",
+          "contentFormatContentValueId": {
+            "guid": "3798b572-3e3f-4690-bb38-e27c240cfc42"
+          },
+          "typeElementId": null
+        },
+        {
+          "guid": "48b4c761-be7e-4524-9baf-8b367d4a2f06",
+          "developerName": "last_updated_at",
+          "contentType": "ContentString",
+          "contentFormatContentValueId": {
+            "guid": "1c7fb710-2eff-49cd-8b32-62a0c4eba35b"
+          },
+          "typeElementId": null
+        },
+        {
+          "guid": "f9aa697d-b5f9-432e-8040-d3ec5500c823",
+          "developerName": "description",
+          "contentType": "ContentString",
+          "contentFormatContentValueId": {
+            "guid": "8d57d97c-127b-486f-aa24-9d989366076e"
+          },
+          "typeElementId": null
+        }
+      ],
+      "bindings": [
+        {
+          "guid": "776b57d1-fc13-45bd-a6d9-c13da65b313d",
+          "databaseTableName": "BDI Flow List:items",
+          "developerName": "BDI Flow List:items",
+          "developerSummary": null,
+          "propertyBindings": [
+            {
+              "databaseFieldName": "river_cross_id",
+              "typeElementPropertyId": "31993c96-5f6f-4984-ae72-6893accb8af5",
+              "id": "41435cae-0f71-4324-961a-17f624d9a14c",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "name",
+              "typeElementPropertyId": "b933e300-9edb-49e9-9f35-8259cf69fdaf",
+              "id": "f4163512-4186-4fd9-a272-e633fb4fbf9f",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "river_type",
+              "typeElementPropertyId": "952cf1d8-c3d6-4c01-9930-c28f78748ee5",
+              "id": "6ac64387-befb-4378-a0ae-39ddada21493",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "river_status",
+              "typeElementPropertyId": "3715dfca-ac1f-45f9-89b3-a1485ba012e9",
+              "id": "49fa0894-bb70-45a9-a420-e2fbcfbe2955",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "last_updated_at",
+              "typeElementPropertyId": "48b4c761-be7e-4524-9baf-8b367d4a2f06",
+              "id": "769231ae-01cc-4da7-9f94-abde46f16384",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "description",
+              "typeElementPropertyId": "f9aa697d-b5f9-432e-8040-d3ec5500c823",
+              "id": "b96b2d02-c03f-4451-84dd-e6633077630b",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
+          "serviceElementId": {
+            "command": null,
+            "guid": "96366f1b-8611-4bdf-93c6-956fc9555816",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "id": "776b57d1-fc13-45bd-a6d9-c13da65b313d",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "d72a94c7-3782-4457-ad84-cb2278304f3e",
+          "databaseTableName": "/ws/simple/getListFlows",
+          "developerName": "/ws/simple/getListFlows",
+          "developerSummary": null,
+          "propertyBindings": [
+            {
+              "databaseFieldName": "river_cross_id",
+              "typeElementPropertyId": "31993c96-5f6f-4984-ae72-6893accb8af5",
+              "id": "a95b96da-efd5-4811-a2f7-d8b816474ce6",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "name",
+              "typeElementPropertyId": "b933e300-9edb-49e9-9f35-8259cf69fdaf",
+              "id": "01e27e18-9101-460c-8d72-d23ac2d2f174",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "river_type",
+              "typeElementPropertyId": "952cf1d8-c3d6-4c01-9930-c28f78748ee5",
+              "id": "b6004912-f1d4-4cc8-b0ef-8a3a4412e802",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "river_status",
+              "typeElementPropertyId": "3715dfca-ac1f-45f9-89b3-a1485ba012e9",
+              "id": "ef7f6ec3-073d-42fb-b33e-24474ab9f8e7",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "last_updated_at",
+              "typeElementPropertyId": "48b4c761-be7e-4524-9baf-8b367d4a2f06",
+              "id": "a3c455df-1812-46ed-b218-12f07c702c9f",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "databaseFieldName": "description",
+              "typeElementPropertyId": "f9aa697d-b5f9-432e-8040-d3ec5500c823",
+              "id": "d43dda37-dc11-49a8-9362-867b3541b886",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
+          "serviceElementId": {
+            "command": null,
+            "guid": "96366f1b-8611-4bdf-93c6-956fc9555816",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "id": "d72a94c7-3782-4457-ad84-cb2278304f3e",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "sharing": 0,
+      "updateable": false,
+      "selectable": false,
+      "deletable": false,
+      "serviceElementId": {
+        "command": null,
+        "guid": "96366f1b-8611-4bdf-93c6-956fc9555816",
+        "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+        "relativeUnit": null
+      },
+      "compositeId": {
+        "guid": "b0562a81-7175-4781-a795-1c43106a1e44",
+        "versionId": "07f6a1ac-2eb0-4701-9d58-9eb645b6f987",
+        "elementType": null,
+        "developerName": "BDI Flow List:items",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "BDI Flow List:items",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:38:47.7631544+00:00",
+      "dateModified": "2026-10-05T18:44:32.567088+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    }
+  ],
+  "valueElementConfigurations": [
+    {
+      "isEncrypted": false,
+      "isVersionless": false,
+      "access": "PRIVATE",
+      "contentType": "ContentObject",
+      "contentFormatContentValueId": {
+        "guid": "f4bde0b5-8da0-421d-9453-f1ae17c91677"
+      },
+      "sharing": 0,
+      "defaultContentValueContentValueId": {
+        "guid": "d7a95b81-b036-4655-b035-5e51dd83d2e6"
+      },
+      "initializationOperations": null,
+      "typeElementId": {
+        "command": null,
+        "guid": "b0562a81-7175-4781-a795-1c43106a1e44",
+        "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+        "relativeUnit": null
+      },
+      "isSecret": false,
+      "compositeId": {
+        "guid": "2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2",
+        "versionId": "98b6fdb7-c74f-4fba-9d8c-9a2246bf1fab",
+        "elementType": "VARIABLE",
+        "developerName": "Selected pipeline",
+        "contentType": "ContentObject",
+        "isVersionless": false
+      },
+      "developerName": "Selected pipeline",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:57:40.0077985+00:00",
+      "dateModified": "2026-10-05T19:01:29.710801+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "isEncrypted": false,
+      "isVersionless": false,
+      "access": "PRIVATE",
+      "contentType": "ContentDateTime",
+      "contentFormatContentValueId": {
+        "guid": "d4f1e66b-187d-42dc-a949-6e41820f3c10"
+      },
+      "sharing": 0,
+      "defaultContentValueContentValueId": {
+        "guid": "2f4544c3-84cc-404d-bf0e-fbe970c506a3"
+      },
+      "initializationOperations": null,
+      "typeElementId": null,
+      "isSecret": false,
+      "compositeId": {
+        "guid": "600dc255-26d2-4bc0-89ef-4b185b347945",
+        "versionId": "b0beeb5d-eadb-4276-85be-a3d033af980a",
+        "elementType": "VARIABLE",
+        "developerName": "Fetched at",
+        "contentType": "ContentDateTime",
+        "isVersionless": false
+      },
+      "developerName": "Fetched at",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:57:40.960012+00:00",
+      "dateModified": "2026-10-05T19:01:29.710801+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "isEncrypted": false,
+      "isVersionless": false,
+      "access": "PRIVATE",
+      "contentType": "ContentCode",
+      "contentFormatContentValueId": {
+        "guid": "7b61ae64-2131-4aef-b975-8436c420b280"
+      },
+      "sharing": 0,
+      "defaultContentValueContentValueId": {
+        "guid": "8c9bc31b-36d3-4776-92ef-d6e0a00c4044"
+      },
+      "initializationOperations": null,
+      "typeElementId": null,
+      "isSecret": false,
+      "compositeId": {
+        "guid": "7ed30817-7507-4d8c-8ff7-e35215773263",
+        "versionId": "92107ae3-d785-4df0-bd29-ba81fed89b3a",
+        "elementType": "VARIABLE",
+        "developerName": "Kumori BDI Listener: OpenAPI schema",
+        "contentType": "ContentCode",
+        "isVersionless": false
+      },
+      "developerName": "Kumori BDI Listener: OpenAPI schema",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:35:45.104537+00:00",
+      "dateModified": "2026-10-05T18:44:32.561769+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "isEncrypted": false,
+      "isVersionless": false,
+      "access": "PRIVATE",
+      "contentType": "ContentList",
+      "contentFormatContentValueId": {
+        "guid": "89e6f195-8a00-49c6-869f-23a36b569fe8"
+      },
+      "sharing": 0,
+      "defaultContentValueContentValueId": {
+        "guid": "df25af81-74c5-497e-8427-7b69a75ef405"
+      },
+      "initializationOperations": null,
+      "typeElementId": {
+        "command": null,
+        "guid": "b0562a81-7175-4781-a795-1c43106a1e44",
+        "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+        "relativeUnit": null
+      },
+      "isSecret": false,
+      "compositeId": {
+        "guid": "e86faeb6-2d6d-4406-8491-5cc1c1db4a0b",
+        "versionId": "f99b9b72-d7a0-4489-b58f-c0e4f4e3c9bd",
+        "elementType": "VARIABLE",
+        "developerName": "BDI pipelines",
+        "contentType": "ContentList",
+        "isVersionless": false
+      },
+      "developerName": "BDI pipelines",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:57:39.0499715+00:00",
+      "dateModified": "2026-10-05T19:01:29.710801+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "isEncrypted": false,
+      "isVersionless": false,
+      "access": "PRIVATE",
+      "contentType": "ContentPassword",
+      "contentFormatContentValueId": {
+        "guid": "663515df-927a-462c-8e52-d5a27ec13ca5"
+      },
+      "sharing": 0,
+      "defaultContentValueContentValueId": {
+        "guid": "225cda16-98ef-4ff4-bf7f-190d9c626ce8"
+      },
+      "initializationOperations": null,
+      "typeElementId": null,
+      "isSecret": false,
+      "compositeId": {
+        "guid": "f40be37f-8449-4484-bf00-17c31d5417a0",
+        "versionId": "f16a60ae-f5c8-428c-adee-a0fb6f32d1ea",
+        "elementType": "VARIABLE",
+        "developerName": "Kumori BDI Listener: API key",
+        "contentType": "ContentPassword",
+        "isVersionless": false
+      },
+      "developerName": "Kumori BDI Listener: API key",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:35:46.0608581+00:00",
+      "dateModified": "2026-10-05T18:44:32.561769+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    }
+  ],
+  "macroElementConfigurations": [],
+  "tagElementConfigurations": [],
+  "pageElementConfigurations": [
+    {
+      "labelContentValueId": {
+        "guid": "3f1d5ac8-f504-4ff1-a8e5-505857950bd9"
+      },
+      "stopConditionsOnFirstTrue": false,
+      "saveHiddenInputs": false,
+      "sharing": 0,
+      "pageContainers": [
+        {
+          "guid": "51133005-05ef-4d2e-882f-eb66a8122aad",
+          "developerName": "Main Container",
+          "className": null,
+          "containerType": "VERTICAL_FLOW",
+          "labelContentValueId": {
+            "guid": "a80dcc37-c3df-42d9-b5f1-06d634dfeed4"
+          },
+          "pageContainers": null,
+          "order": 0,
+          "attributes": null,
+          "tags": null,
+          "id": "51133005-05ef-4d2e-882f-eb66a8122aad",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "pageComponents": [
+        {
+          "guid": "0d8b148c-b0bb-418c-a251-83ddd240d7d9",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "51133005-05ef-4d2e-882f-eb66a8122aad",
+          "developerName": "Detail",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "a5d12587-9742-40ed-a2a9-3fb81e98cc0f"
+          },
+          "imageUriContentValueId": {
+            "guid": "1b93946d-f96d-4d76-8a92-d00fb1790504"
+          },
+          "labelContentValueId": {
+            "guid": "d5c15bc8-3bbc-4e71-9c7a-100783d4062e"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "dd08952c-dd6c-4276-8431-837aefc7249e"
+          },
+          "helpInfoContentValueId": {
+            "guid": "54318870-7182-4979-96d0-719ff621e7ab"
+          },
+          "order": 0,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "0d8b148c-b0bb-418c-a251-83ddd240d7d9",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "c340d05e-3cb3-4678-8874-4c4dc0358526",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "51133005-05ef-4d2e-882f-eb66a8122aad",
+          "developerName": "How we built this",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "47a93457-20d1-423c-a99f-2b323666faa5"
+          },
+          "imageUriContentValueId": {
+            "guid": "a883ba6d-5340-4001-880f-800a457d8030"
+          },
+          "labelContentValueId": {
+            "guid": "9e611019-ff32-4ed3-9f43-1e091ac1318d"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "aea128e6-538d-4284-8917-6d5466346f44"
+          },
+          "helpInfoContentValueId": {
+            "guid": "753f6d84-3b57-4682-a287-b3decfbad469"
+          },
+          "order": 1,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "c340d05e-3cb3-4678-8874-4c4dc0358526",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "pageConditions": null,
+      "attributes": null,
+      "tags": null,
+      "modernPageLayout": false,
+      "compositeId": {
+        "guid": "733f2ae2-4659-4cc4-a9ab-5b9b9d642af1",
+        "versionId": "6142136b-e131-44b0-b8f0-fea8cdd9b238",
+        "elementType": "PAGE_LAYOUT",
+        "developerName": "BDI pipeline page",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "BDI pipeline page",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:57:46.329353+00:00",
+      "dateModified": "2026-10-05T20:13:52.964024+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "labelContentValueId": {
+        "guid": "9dc16899-04ac-4f1c-ad26-0af51e32affa"
+      },
+      "stopConditionsOnFirstTrue": false,
+      "saveHiddenInputs": false,
+      "sharing": 0,
+      "pageContainers": [
+        {
+          "guid": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "developerName": "Main Container",
+          "className": null,
+          "containerType": "VERTICAL_FLOW",
+          "labelContentValueId": {
+            "guid": "40fb59ee-5a63-437f-b3ac-719b319e3b50"
+          },
+          "pageContainers": null,
+          "order": 0,
+          "attributes": null,
+          "tags": null,
+          "id": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "pageComponents": [
+        {
+          "guid": "383047b2-d0f2-4902-a52f-f9fb8de55f7d",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "developerName": "Fetched",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "12985952-d8fa-4a76-b7d3-8f03ca881a94"
+          },
+          "imageUriContentValueId": {
+            "guid": "4146fcdc-694a-4bab-a9f0-51ab35b6b6da"
+          },
+          "labelContentValueId": {
+            "guid": "747e5abb-a678-416d-bbc7-861f9d016505"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "95ad61f2-38d8-47bc-a110-e3c4c84daf67"
+          },
+          "helpInfoContentValueId": {
+            "guid": "5095b3b2-0305-47f0-b055-1e6a9f9c5b67"
+          },
+          "order": 0,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "383047b2-d0f2-4902-a52f-f9fb8de55f7d",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "1c7e440c-9fad-43a3-bdb4-5e4a2771f961",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "developerName": "Pipelines",
+          "columns": [
+            {
+              "typeElementPropertyId": "b933e300-9edb-49e9-9f35-8259cf69fdaf",
+              "isBound": false,
+              "isPinned": false,
+              "boundTypeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "labelContentValueId": {
+                "guid": "58076234-064a-4eb3-8a0c-df0ea89a5bd1"
+              },
+              "isDisplayValue": true,
+              "isEditable": false,
+              "order": 0,
+              "typeElementPropertyToDisplayId": "00000000-0000-0000-0000-000000000000",
+              "componentType": null,
+              "typeElementPropertyDeveloperName": "name",
+              "id": "630a6bd2-8101-47b2-b445-c5b81ea98dc6",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "typeElementPropertyId": "952cf1d8-c3d6-4c01-9930-c28f78748ee5",
+              "isBound": false,
+              "isPinned": false,
+              "boundTypeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "labelContentValueId": {
+                "guid": "a2c989cc-96b8-4edc-852d-2dfcef471403"
+              },
+              "isDisplayValue": true,
+              "isEditable": false,
+              "order": 1,
+              "typeElementPropertyToDisplayId": "00000000-0000-0000-0000-000000000000",
+              "componentType": null,
+              "typeElementPropertyDeveloperName": "river_type",
+              "id": "3cfbdc48-4bf2-495a-ab72-3e1c2d63cf6a",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "typeElementPropertyId": "3715dfca-ac1f-45f9-89b3-a1485ba012e9",
+              "isBound": false,
+              "isPinned": false,
+              "boundTypeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "labelContentValueId": {
+                "guid": "5e86c592-4967-4f8f-9e71-bbb6c8ec508b"
+              },
+              "isDisplayValue": true,
+              "isEditable": false,
+              "order": 2,
+              "typeElementPropertyToDisplayId": "00000000-0000-0000-0000-000000000000",
+              "componentType": null,
+              "typeElementPropertyDeveloperName": "river_status",
+              "id": "36bbc36f-3d16-4a55-aa6a-4b9061471ced",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            },
+            {
+              "typeElementPropertyId": "48b4c761-be7e-4524-9baf-8b367d4a2f06",
+              "isBound": false,
+              "isPinned": false,
+              "boundTypeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+              "labelContentValueId": {
+                "guid": "5094804e-3d3a-4858-9420-49e5fbc564af"
+              },
+              "isDisplayValue": true,
+              "isEditable": false,
+              "order": 3,
+              "typeElementPropertyToDisplayId": "00000000-0000-0000-0000-000000000000",
+              "componentType": null,
+              "typeElementPropertyDeveloperName": "last_updated_at",
+              "id": "bda678af-da98-4da8-9caf-99571b355af0",
+              "versionId": "00000000-0000-0000-0000-000000000000",
+              "parentId": "00000000-0000-0000-0000-000000000000",
+              "parentVersionId": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
+          "componentType": "table",
+          "contentContentValueId": {
+            "guid": "dd5b8136-10ff-442f-b62d-4fc5516ca6c1"
+          },
+          "imageUriContentValueId": {
+            "guid": "50def603-60f4-4142-8cb8-533c8c666cb7"
+          },
+          "labelContentValueId": {
+            "guid": "f02b5104-67ea-4730-98da-de7a87150f12"
+          },
+          "valueElementValueBindingReferenceId": {
+            "command": null,
+            "guid": "2cb6f36f-5f57-4aa2-8605-aa13bf43d4c2",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "valueElementDataBindingReferenceId": {
+            "command": null,
+            "guid": "e86faeb6-2d6d-4406-8491-5cc1c1db4a0b",
+            "typeElementPropertyId": "00000000-0000-0000-0000-000000000000",
+            "relativeUnit": null
+          },
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "0d3f8d6c-047c-468d-9cfa-6141d15e455e"
+          },
+          "helpInfoContentValueId": {
+            "guid": "e734de63-3c4b-42c7-ae6f-4e974e730495"
+          },
+          "order": 1,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "1c7e440c-9fad-43a3-bdb4-5e4a2771f961",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "0d4129a8-d703-40c6-880b-7b0b0b80fe3f",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "developerName": "How we built this",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "b12cfdd0-1c08-4c29-805a-3e5a885857e4"
+          },
+          "imageUriContentValueId": {
+            "guid": "c85716f8-71e8-45fe-af4c-400ca30638bb"
+          },
+          "labelContentValueId": {
+            "guid": "0527b23c-58fc-4c9b-bbb7-4a7c677be5b5"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "459d1c37-bd5c-46fe-99de-07d1def124c3"
+          },
+          "helpInfoContentValueId": {
+            "guid": "5f0cae80-ffbc-4a5d-bda1-5f42caf72956"
+          },
+          "order": 3,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "0d4129a8-d703-40c6-880b-7b0b0b80fe3f",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "cf377c7b-adef-45dd-ac9b-8dfb1299973f",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "229354c5-9b54-4e41-b6f7-a0d06a2b4ff1",
+          "developerName": "Under the hood",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "f539fe5f-789a-4d54-895e-afccb5f12235"
+          },
+          "imageUriContentValueId": {
+            "guid": "ca44fdd5-4b1c-430a-bf2c-404e7e8b7f88"
+          },
+          "labelContentValueId": {
+            "guid": "3989f224-d08d-448e-a548-8050d604b440"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "eee9b78a-4dcc-4aee-b9e0-9392961d3402"
+          },
+          "helpInfoContentValueId": {
+            "guid": "cffbeaad-6687-478f-b0b9-fc0638cc28e9"
+          },
+          "order": 2,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "cf377c7b-adef-45dd-ac9b-8dfb1299973f",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "pageConditions": null,
+      "attributes": null,
+      "tags": null,
+      "modernPageLayout": false,
+      "compositeId": {
+        "guid": "b285f049-9a2f-4638-93c7-3b58bb96ce84",
+        "versionId": "69b40c63-eebc-45d7-a176-8578706b91e8",
+        "elementType": "PAGE_LAYOUT",
+        "developerName": "BDI pipelines page",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "BDI pipelines page",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:57:44.234516+00:00",
+      "dateModified": "2026-10-05T21:28:47.846688+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    },
+    {
+      "labelContentValueId": {
+        "guid": "5e3ed9f5-f75d-4923-bf6b-e10839e82633"
+      },
+      "stopConditionsOnFirstTrue": false,
+      "saveHiddenInputs": false,
+      "sharing": 0,
+      "pageContainers": [
+        {
+          "guid": "5e301f84-802b-49f1-bb32-4b91fe0d5aa0",
+          "developerName": "Main Container",
+          "className": "k-hero-card",
+          "containerType": "VERTICAL_FLOW",
+          "labelContentValueId": {
+            "guid": "3e6b5189-36a7-4204-ac7a-6a124495c16b"
+          },
+          "pageContainers": null,
+          "order": 0,
+          "attributes": null,
+          "tags": null,
+          "id": "5e301f84-802b-49f1-bb32-4b91fe0d5aa0",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "pageComponents": [
+        {
+          "guid": "879f06d2-712f-41d7-a76f-0dd782937138",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "5e301f84-802b-49f1-bb32-4b91fe0d5aa0",
+          "developerName": "Intro",
+          "columns": null,
+          "componentType": "presentation",
+          "contentContentValueId": {
+            "guid": "543479be-50e6-4503-8742-c4db109fb908"
+          },
+          "imageUriContentValueId": {
+            "guid": "b3ea0735-97e1-4335-a76b-3567cd44e4cc"
+          },
+          "labelContentValueId": {
+            "guid": "0e510e39-cb6d-4b17-aaf2-3ac5b05a39d6"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "bf398a55-b9b8-4c9c-af02-bdc21c5dc664"
+          },
+          "helpInfoContentValueId": {
+            "guid": "0a06c27b-11dc-4290-95a6-f3e25bb0b540"
+          },
+          "order": 0,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": null,
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "879f06d2-712f-41d7-a76f-0dd782937138",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        },
+        {
+          "guid": "e2793d97-1ddc-4858-9616-e0bc8531631a",
+          "pageContainerDeveloperName": "Main Container",
+          "pageContainerId": "5e301f84-802b-49f1-bb32-4b91fe0d5aa0",
+          "developerName": "Hero button",
+          "columns": null,
+          "componentType": "outcomes",
+          "contentContentValueId": {
+            "guid": "bb9c0996-defd-4dfe-be3b-bdbc11099d76"
+          },
+          "imageUriContentValueId": {
+            "guid": "8d321e0e-de7f-4056-9fb7-0ff376c4e2b3"
+          },
+          "labelContentValueId": {
+            "guid": "eb445698-2ef5-45a7-91b3-590b8694e57f"
+          },
+          "valueElementValueBindingReferenceId": null,
+          "valueElementDataBindingReferenceId": null,
+          "dataBindingSharedElementTypeElementId": "00000000-0000-0000-0000-000000000000",
+          "objectDataRequest": null,
+          "fileDataRequest": null,
+          "size": 0,
+          "maxSize": null,
+          "height": 0,
+          "width": 0,
+          "isEditable": false,
+          "isRequired": false,
+          "isMultiSelect": false,
+          "isSearchable": false,
+          "isSearchableDisplayColumns": false,
+          "isSearchTermPersisted": false,
+          "hintValueContentValueId": {
+            "guid": "c2cabc8a-de59-4e90-ac12-19d79f4c6c84"
+          },
+          "helpInfoContentValueId": {
+            "guid": "5a74891f-0844-488e-af5f-7ad473e2027b"
+          },
+          "order": 1,
+          "attributes": null,
+          "tags": null,
+          "validations": [],
+          "className": "k-hero-cta",
+          "row": 0,
+          "column": 0,
+          "rowSpan": 0,
+          "colSpan": 0,
+          "id": "e2793d97-1ddc-4858-9616-e0bc8531631a",
+          "versionId": "00000000-0000-0000-0000-000000000000",
+          "parentId": "00000000-0000-0000-0000-000000000000",
+          "parentVersionId": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "pageConditions": null,
+      "attributes": null,
+      "tags": null,
+      "modernPageLayout": false,
+      "compositeId": {
+        "guid": "c25f7ee3-2ed6-4692-85f7-ed4666dc63a2",
+        "versionId": "cd699bf7-f4a4-4924-afdc-19586ab5c3f4",
+        "elementType": "PAGE_LAYOUT",
+        "developerName": "Intro page",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Intro page",
+      "developerSummary": "Welcome + BDI flows list (placeholder until Integration ListFlows is bound)",
+      "dateCreated": "2026-10-05T17:25:24.982665+00:00",
+      "dateModified": "2026-10-05T21:48:09.911362+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    }
+  ],
+  "identityProviderElementConfigurations": [],
+  "customPageComponentElementConfigurations": [],
+  "openApiConfigurations": [
+    {
+      "schemaInfo": {
+        "serverUrl": "https://boomi.kumori.ai",
+        "schemaUrl": null,
+        "security": "NONE",
+        "me": null,
+        "scopes": null,
+        "grantType": null,
+        "paths": [
+          {
+            "path": "/ws/simple/getListFlows",
+            "operation": {
+              "method": "GET"
+            },
+            "requestSchema": null,
+            "responseSchema": {
+              "title": null,
+              "description": null,
+              "reference": "#/components/schemas/FlowList",
+              "type": "object",
+              "developerName": "BDI Flow List",
+              "oneOfReferences": null,
+              "properties": [
+                "total_items",
+                "items"
+              ],
+              "listFilterMapping": {
+                "listProp": "items",
+                "id": null,
+                "orderBy": null,
+                "orderDirection": null,
+                "limit": null,
+                "offset": null,
+                "search": null
+              }
+            },
+            "parameterInfos": [],
+            "securitySchemes": [
+              {
+                "type": 0,
+                "reference": {
+                  "externalResource": null,
+                  "type": 6,
+                  "id": "listenerAuth",
+                  "isExternal": false,
+                  "isLocal": true,
+                  "hostDocument": null,
+                  "referenceV3": "listenerAuth",
+                  "referenceV2": "listenerAuth"
+                }
+              }
+            ],
+            "fileUploadSchemas": [],
+            "shouldGenerateType": true
+          }
+        ]
+      },
+      "compositeId": {
+        "guid": "048a8786-a7d3-4666-b01f-ec610c421bf6",
+        "versionId": "83331960-ae0d-4c2b-8080-69548447de83",
+        "elementType": null,
+        "developerName": "Kumori BDI Listener",
+        "contentType": null,
+        "isVersionless": false
+      },
+      "developerName": "Kumori BDI Listener",
+      "developerSummary": null,
+      "dateCreated": "2026-10-05T18:36:34.485035+00:00",
+      "dateModified": "2026-10-05T18:44:32.553713+00:00",
+      "userCreated": "00000000-0000-0000-0000-000000000000",
+      "userModified": "00000000-0000-0000-0000-000000000000",
+      "userOwner": "00000000-0000-0000-0000-000000000000",
+      "userOwnerObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userCreatedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      },
+      "userModifiedObject": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "firstName": "Example",
+        "lastName": "Author",
+        "email": "author@example.com"
+      }
+    }
+  ]
+}

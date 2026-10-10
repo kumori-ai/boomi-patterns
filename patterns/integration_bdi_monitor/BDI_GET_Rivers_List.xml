@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bns:Component xmlns:bns="http://api.platform.boomi.com/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               name="BDI Rivers API: List Pipelines"
+               type="connector-action"
+               subType="officialboomi-X3979C-rest-prod"
+               folderId="{{FOLDER_ID}}" componentId="{{REST_OPERATION_ID}}">
+  <bns:encryptedValues/>
+  <bns:description>Lists the data flows (rivers) in the Kumori BDI environment. Authorization is blank here and filled at the step from DPP_BDI_AUTH. | built with boomi-companion v1.0.76</bns:description>
+  <bns:object>
+    <Operation returnApplicationErrors="false" trackResponse="false">
+      <Archiving directory="" enabled="false"/>
+      <Configuration>
+        <GenericOperationConfig customOperationType="GET" operationType="EXECUTE"
+                                responseProfile="{{PROFILE_ID}}" responseProfileType="json">
+          <field id="followRedirects" type="string" value="NONE"/>
+          <field id="path" type="string" value="/v1/accounts/{{BDI_ACCOUNT_ID}}/environments/{{BDI_ENVIRONMENT_ID}}/rivers"/>
+          <field id="queryParameters" type="customproperties">
+            <customProperties/>
+          </field>
+          <field id="requestHeaders" type="customproperties">
+            <customProperties>
+              <properties key="Authorization" value=""/>
+              <properties key="Accept" value="application/json"/>
+            </customProperties>
+          </field>
+          <Options/>
+        </GenericOperationConfig>
+      </Configuration>
+      <Tracking>
+        <TrackedFields/>
+      </Tracking>
+      <Caching/>
+    </Operation>
+  </bns:object>
+</bns:Component>

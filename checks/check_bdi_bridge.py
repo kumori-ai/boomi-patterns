@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+"""Proves the Flow -> Integration -> BDI bridge end to end, one link at a time, and prints a dated result.
+
+    python3 checks/check_bdi_bridge.py
+
+1. Listener auth: GET without credentials must be 401 (a 200 would mean the listener is open).
+2. Integration -> BDI: GET with the listener login returns the BDI rivers list.
+3. kumori.ai -> Integration: /api/boomi/flows (the "Run it live" button) answers live with the same rivers.
+4. Flow -> Integration: run the Kumori BDI Monitor flow headlessly, press its button, and read the table it loads
+   through the OpenAPI connector.
+Every link must return the same river names. Zero rivers is an error, never a pass: an empty list proves nothing.
+Read-only: listing rivers runs nothing in BDI and spends no credits. Credentials come from kumori-404602 Secret Manager.
+The account, tenant and flow ids come from the gitignored notes/ids.json (keys boomi_account, flow_tenant, flow).
+"""
+import json
+import os
+import subprocess
+import sys
+import time
+from datetime import date
+
+LISTENER = 'https://boomi.kumori.ai/ws/simple/getListFlows'
+KUMORI = 'https://kumori.ai/api/boomi/flows'
+IDS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'notes', 'ids.json')))  # gitignored
+ACCOUNT, TENANT, FLOW = IDS['boomi_account'], IDS['flow_tenant'], IDS['flow']
+ASK = 'Ask BDI for its pipelines'
+LIST_PAGE = 'Pipelines'
+
+
+def secret(name):
+    return json.loads(subprocess.run(['gcloud', 'secrets', 'versions', 'access', 'latest', f'--secret={name}',
+                                      '--project=kumori-404602'], capture_output=True, text=True, check=True).stdout)
+
+
+def curl(url, *args, body=None):
+    cmd = ['curl', '-s', '-m', '60', '-w', '\n%{http_code} %{time_total}', *args]
+    if body is not None:
+        cmd += ['-H', 'Content-Type: application/json', '-d', '@-']
+    out = subprocess.run(cmd + [url], input=json.dumps(body) if body is not None else None,
+                         capture_output=True, text=True).stdout
+    text, tail = out.rsplit('\n', 1)
+    code, secs = tail.split()
+    return code, text, int(float(secs) * 1000)
+
+
+def fail(msg):
+    sys.exit(f'FAIL {msg}')
+
+
+def main():
+    results = []
+    code, _, _ = curl(LISTENER)
+    if code != '401':
+        fail(f'listener without credentials answered {code}, expected 401')
+    results.append('listener refuses anonymous (401)')
+
+    login = secret('KUMORI_BOOMI_INTEGRATION_LISTENER')[ACCOUNT]
+    code, text, ms = curl(LISTENER, '-u', f"{login['username']}:{login['token']}")
+    if code != '200':
+        fail(f'listener with credentials answered {code}')
+    names = sorted(r['name'] for r in json.loads(text).get('items') or [])
+    if not names:
+        fail('listener returned zero rivers; the check proves nothing on an empty list')
+    results.append(f'Integration -> BDI: {len(names)} rivers in {ms} ms')
+
+    code, text, ms = curl(KUMORI)
+    body = json.loads(text)
+    if code != '200' or not body.get('live'):
+        fail(f'kumori.ai answered {code}: {body.get("error")}')
+    if sorted(f['name'] for f in body['flows']) != names:
+        fail('kumori.ai rivers differ from the listener')
+    results.append(f'kumori.ai -> Integration: live, {body.get("elapsed_ms")} ms upstream')
+
+    keys = secret('KUMORI_BOOMI_FLOW_API_KEY')
+    hdr = ['-H', f"x-boomi-flow-api-key: {keys['keys'][TENANT]}", '-H', f'manywhotenant: {TENANT}', '-X', 'POST']
+    api = keys['api_url']
+    t0 = time.monotonic()
+    code, text, _ = curl(f'{api}/api/run/1/state', *hdr, body={'id': FLOW})
+    if code != '200':
+        fail(f'Flow run init answered {code}: {text[:200]}')
+    run, sid = json.loads(text), None
+    sid = run['stateId']
+
+    def step(prev, label=None):
+        resp = (prev.get('mapElementInvokeResponses') or [{}])[0]
+        oc = next((o['id'] for o in resp.get('outcomeResponses') or [] if o['label'] == label), None) if label else None
+        if label and not oc:
+            fail(f'Flow page {resp.get("developerName")!r} has no {label!r} button')
+        code, text, _ = curl(f'{api}/api/run/1/state/{sid}', *hdr, body={
+            'stateId': sid, 'stateToken': prev['stateToken'], 'currentMapElementId': prev.get('currentMapElementId'),
+            'invokeType': 'FORWARD', 'mapElementInvokeRequest': {'selectedOutcomeId': oc, 'pageRequest': {'pageComponentInputResponses': []}}})
+        if code != '200':
+            fail(f'Flow step {label or "start"} answered {code}: {text[:200]}')
+        return json.loads(text)
+
+    run = step(step(run), ASK)  # start -> intro page -> press the button: Flow loads BDI's pipelines through the connector
+    page = (run.get('mapElementInvokeResponses') or [{}])[0]
+    if page.get('developerName') != LIST_PAGE:
+        fail(f'Flow landed on {page.get("developerName")!r}, expected {LIST_PAGE!r}')
+    rows = [o for d in page['pageResponse']['pageComponentDataResponses'] for o in d.get('objectData') or []]
+    flow_names = sorted(next(p['contentValue'] for p in r['properties'] if p['developerName'] == 'name') for r in rows)
+    if flow_names != names:
+        fail(f'Flow table rivers differ from the listener: {flow_names}')
+    results.append(f'Flow -> Integration: pressed {ASK!r}, table loaded {len(flow_names)} rivers, run took {int((time.monotonic() - t0) * 1000)} ms')
+
+    print(f'PASS as of {date.today().isoformat()}')
+    for r in results:
+        print(f'  {r}')
+    print(f'  rivers: {", ".join(names)}')
+
+
+if __name__ == '__main__':
+    main()

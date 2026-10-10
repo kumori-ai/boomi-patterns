@@ -1,0 +1,20 @@
+# Credentials: filled from kumori-404602 Secret Manager by tools/make_env.sh
+.env
+.env.*
+
+# Private: Boomi contacts, POC customers, trial account details. Never public.
+notes/
+
+# Scratch and retired files
+_oneoff/
+_antiquated*/
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+venv*/
+.DS_Store
+
+# bc-bdi scratch request bodies
+active-development/

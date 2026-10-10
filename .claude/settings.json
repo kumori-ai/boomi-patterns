@@ -1,0 +1,14 @@
+{
+  "enabledPlugins": {
+    "bc-bdi@boomi-companion": true,
+    "bc-integration@boomi-companion": true
+  },
+  "extraKnownMarketplaces": {
+    "boomi-companion": {
+      "source": {
+        "source": "github",
+        "repo": "OfficialBoomi/boomi-companion"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bns:Component xmlns:bns="http://api.platform.boomi.com/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               name="[LISTENER] BDI List Pipelines"
+               type="process"
+               folderId="{{FOLDER_ID}}" componentId="{{LISTENER_PROCESS_ID}}">
+  <bns:encryptedValues/>
+  <bns:description>Web Services Server listener for GET /ws/simple/getListFlows. Thin wrapper: WSS start, call [SUB] BDI List Pipelines, return its documents to the caller (kumori.ai/api/boomi/flows, Flow's OpenAPI connector). | built with boomi-companion v1.0.76</bns:description>
+  <bns:object>
+    <process allowSimultaneous="true" enableUserLog="false" processLogOnErrorOnly="false" purgeDataImmediately="false" stopProcessingIfZeroDocuments="true" updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start" userlabel="" x="48.0" y="46.0">
+          <configuration>
+            <connectoraction actionType="Listen" allowDynamicCredentials="NONE" connectorType="wss" hideSettings="true" operationId="{{WSS_OPERATION_ID}}">
+              <parameters/>
+              <dynamicProperties/>
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape2" x="257.0" y="56.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="processcall_icon" name="shape2" shapetype="processcall" userlabel="List BDI flows" x="273.0" y="48.0">
+          <configuration>
+            <processcall abort="true" processId="{{SUB_PROCESS_ID}}" wait="true">
+              <parameters/>
+              <returnpaths>
+                <returnpaths childShapeName="shape5"/>
+              </returnpaths>
+            </processcall>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="shape5" name="shape2.dragpoint1" text="Rivers" toShape="shape3" x="482.0" y="56.0"/>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape3" shapetype="returndocuments" userlabel="" x="498.0" y="48.0">
+          <configuration>
+            <returndocuments/>
+          </configuration>
+          <dragpoints/>
+        </shape>
+      </shapes>
+    </process>
+  </bns:object>
+  <bns:processOverrides>
+    <Overrides xmlns="">
+      <Properties>
+        <PropertyOverride name="DPP_BDI_AUTH"/>
+      </Properties>
+    </Overrides>
+  </bns:processOverrides>
+</bns:Component>
