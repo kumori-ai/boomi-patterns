@@ -10,7 +10,7 @@ A Boomi Flow app, "Kumori BDI Monitor", that tells its own story in three screen
 Data loads through Flow's OpenAPI connector, which calls the Integration listener in `../integration_bdi_monitor`.
 Everything here was created through the Flow API; no step needed the Flow console.
 The full story behind it: [kumori.ai/whats-new/boomi-data-integration](https://kumori.ai/whats-new/boomi-data-integration).
-[Open the live app](https://kumori.ai/demo/boomi).
+[Open the live app](https://kumori.ai/demo/boomi/flow).
 
 **This is the export of Kumori's own live app.** It was scrubbed: Flow exports a Password value's default in plain
 text, and our listener credential was in it; the author's name, address and user id are replaced too. Element ids are
@@ -37,7 +37,7 @@ kept, because the package refers to itself by them.
    selection) -> detail page. Element type names are snake_case (`database_load`), as the composer sends them.
 5. Theme `kumori`: CSS for cards and striped tables, plus a small DOM helper in the theme's JavaScript that turns ISO
    times into "2 hours ago" (full time on hover), snake_case into words, and status into a glyph-and-text badge.
-6. Player `kumori`: `POST /{tenant}/play/kumori` with the HTML of `kumori.player.html` (form-encoded, see field notes). The app is served at `/{tenant}/play/kumori?flow-id=...`, shared as https://kumori.ai/demo/boomi.
+6. Player `kumori`: `POST /{tenant}/play/kumori` with the HTML of `kumori.player.html` (form-encoded, see field notes). The app is served at `/{tenant}/play/kumori?flow-id=...`, shared as https://kumori.ai/demo/boomi/flow.
 7. Snapshot, activate, and run headlessly (`checks/check_bdi_bridge.py` presses the button and reads the rows).
 
 Full API detail: `docs/platform_api_access.md`.
