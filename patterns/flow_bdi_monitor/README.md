@@ -20,7 +20,7 @@ kept, because the package refers to itself by them.
 |---|---|
 | `kumori_bdi_monitor.flow-package.json` | Flow package (flow, page, connector, types, values, OpenAPI config), credential redacted |
 | `kumori.player.html` | The custom Kumori player: kumori.ai's header, fonts and footer around Flow's runtime |
-| `kumori.theme.json` | The Kumori theme (styles also served from kumori.ai/static/css/flow-kumori.css) |
+| `kumori.theme.json` | The Kumori theme: the small DOM helper in its JavaScript. Its styles are not here; they are inline in `kumori.player.html`, the one copy (a second copy on kumori.ai was retired 2026-10-12) |
 | `../integration_bdi_monitor/wss_list_flows.openapi.yaml` | The OpenAPI 3.0 spec the connector reads |
 
 ## How it was built, by API (as of 2026-10-05)
